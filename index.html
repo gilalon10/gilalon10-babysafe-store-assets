@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BabySafe – Never forget a child in the car</title>
+<meta name="description" content="BabySafe reminds you to check the back seat every time you leave the car. Automatic alert when your phone disconnects from the car's Bluetooth. Free, no ads, 19 languages.">
+<meta property="og:title" content="BabySafe – Never forget a child in the car">
+<meta property="og:description" content="Automatic alert the moment you leave the car. Free, no ads, 19 languages.">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#2C4A7A;--green:#2DB55D;--green-soft:#E6F7EC;--bg:#F4F4F0;--ink:#1C1C1E;--muted:#4A4A50;--card:#fff;--line:#E3E3DC;--alert:#F2552C}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--ink:#F2F2F0;--muted:#B4B6BC;--card:#1C1F24;--line:#2A2E35;--green-soft:#143322;--navy:#8FB0E6}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.5px;text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:9px}
+.brand .b1{color:var(--navy)}.brand .b2{color:var(--green)}
+select{font:inherit;font-size:14px;padding:7px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:30px 0 60px}
+h1{font-size:clamp(34px,5.4vw,58px);line-height:1.08;margin:0 0 18px;font-weight:800;letter-spacing:-1px;text-wrap:balance}
+.sub{font-size:clamp(17px,2vw,21px);color:var(--muted);margin:0 0 30px;max-width:30ch}
+.play{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--bg);text-decoration:none;padding:14px 24px;border-radius:14px;font-weight:600;font-size:18px;transition:transform .15s}
+.play:hover{transform:translateY(-2px)}
+.play svg{width:26px;height:26px}
+.free{margin-top:14px;font-size:15px;color:var(--muted)}
+.phone{justify-self:center;width:min(320px,80vw);border-radius:28px;box-shadow:0 30px 60px -20px rgba(28,28,30,.35);display:block}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,3.2vw,36px);margin:0 0 28px;font-weight:800;letter-spacing:-.5px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.step::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green-soft);color:var(--green);font-weight:800;margin-bottom:14px}
+.step b{display:block;font-size:19px;margin-bottom:6px}
+.step span{color:var(--muted);font-size:15px}
+.gallery{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+.gallery img{flex:0 0 auto;width:min(240px,62vw);border-radius:18px;scroll-snap-align:start;border:1px solid var(--line)}
+.video{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;max-width:860px}
+.video iframe,.video button{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video button{cursor:pointer;background:#000 center/cover no-repeat;display:grid;place-items:center}
+.video button span{width:76px;height:54px;border-radius:14px;background:#f00;display:grid;place-items:center}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:12px;max-width:760px}
+summary{cursor:pointer;font-weight:600;font-size:17px}
+details p{margin:10px 0 0;color:var(--muted)}
+.note{max-width:760px;margin-top:22px;padding:14px 18px;border-inline-start:4px solid var(--alert);background:var(--card);border-radius:10px;font-size:15px}
+.cta2{text-align:center}
+footer{padding:30px 0 50px;color:var(--muted);font-size:14px;display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid var(--line)}
+footer a{color:inherit}
+@media (max-width:760px){.hero{grid-template-columns:1fr;text-align:center;padding-top:10px}.sub{margin-inline:auto}.steps{grid-template-columns:1fr}.phone{order:-1;width:min(240px,64vw)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="#"><img src="img/icon.png" alt=""><span><span class="b1">Baby</span><span class="b2">Safe</span></span></a>
+  <select id="lang" aria-label="Language"></select>
+</header>
+
+<div class="hero">
+  <div>
+    <h1 data-t="h1"></h1>
+    <p class="sub" data-t="sub"></p>
+    <a class="play" data-play target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#2DB55D" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#FBBC04" d="m17.3 8.5-3.5 3.5 3.5 3.5 4-2.3c.9-.5.9-1.9 0-2.4z"/><path fill="#4285F4" d="M3.6 1.8c.3-.1.7-.1 1.1.1l12.6 6.6-3.5 3.5z"/><path fill="#EA4335" d="m13.8 12 3.5 3.5-12.6 6.6c-.4.2-.8.2-1.1.1z"/></svg>
+      <span data-t="cta"></span>
+    </a>
+    <div class="free" data-t="free"></div>
+  </div>
+  <img class="phone" id="heroimg" alt="BabySafe screenshot" width="320" height="569">
+</div>
+</div>
+
+<section><div class="wrap">
+  <h2 data-t="how"></h2>
+  <div class="steps" id="steps"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="gallery" id="gallery"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 data-t="video"></h2>
+  <div class="video"><button id="vbtn" aria-label="Play video" style="background-image:url(https://i.ytimg.com/vi/vDju8QVbLRM/hqdefault.jpg)"><span><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="M8 5v14l11-7z"/></svg></span></button></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 data-t="faq"></h2>
+  <details><summary data-t="q1"></summary><p data-t="a1"></p></details>
+  <details><summary data-t="q2"></summary><p data-t="a2"></p></details>
+  <details><summary data-t="q3"></summary><p data-t="a3"></p></details>
+  <div class="note" data-t="note"></div>
+</div></section>
+
+<section class="cta2"><div class="wrap">
+  <a class="play" data-play target="_blank" rel="noopener"><span data-t="cta"></span></a>
+</div></section>
+
+<div class="wrap">
+<footer>
+  <span>© 2026 BabySafe · Gil Alon</span>
+  <a href="https://sites.google.com/view/babysafeprivacy" target="_blank" rel="noopener" data-t="privacy"></a>
+</footer>
+</div>
+
+<script>
+const T={"en": {"cta": "Get it on Google Play", "free": "Free · No ads · No sign-up", "how": "How it works", "video": "See it in action", "faq": "Questions", "q1": "Does it drain the battery?", "a1": "No. It simply waits for your phone to connect to the car's Bluetooth, which uses almost no battery.", "q2": "Does it need internet or an account?", "a2": "No. It works on the phone itself – no internet, no sign-up.", "q3": "Is there an iPhone version?", "a3": "Not yet. BabySafe is currently available for Android phones.", "note": "BabySafe is a reminder tool. It does not replace a parent's attention.", "privacy": "Privacy policy", "dir": "ltr", "h1": "Never forget a child<br>in the car", "sub": "Automatic alert the moment you leave the car", "steps": [["One tap to turn it on", "Then it works by itself, in the background"], ["Knows when you drive", "Connects to your car’s Bluetooth automatically"], ["Alert when you leave the car", "Voice, vibration and flashlight – even on a locked screen"]]}, "he": {"cta": "להורדה מ-Google Play", "free": "חינם · בלי פרסומות · בלי הרשמה", "how": "איך זה עובד", "video": "רואים את זה בפעולה", "faq": "שאלות", "q1": "האם היא מרוקנת את הסוללה?", "a1": "לא. היא רק מחכה שהטלפון יתחבר לבלוטוס של הרכב, וזה כמעט לא צורך סוללה.", "q2": "צריך אינטרנט או חשבון?", "a2": "לא. הכול עובד בטלפון עצמו – בלי אינטרנט ובלי הרשמה.", "q3": "יש גרסה לאייפון?", "a3": "עדיין לא. כרגע BabySafe זמינה לטלפוני אנדרואיד.", "note": "BabySafe היא כלי תזכורת. היא לא מחליפה את תשומת הלב של ההורה.", "privacy": "מדיניות פרטיות", "dir": "rtl", "h1": "לעולם לא לשכוח<br>ילד ברכב", "sub": "התראה אוטומטית ברגע שיוצאים מהרכב", "steps": [["לחיצה אחת להפעלה", "ומשם היא עובדת לבד, ברקע"], ["יודעת מתי נוסעים", "מתחברת אוטומטית לבלוטוס של הרכב"], ["התראה כשיוצאים מהרכב", "קול, רטט ופנס – גם כשהמסך נעול"]]}, "ar": {"cta": "احصل عليه من Google Play", "free": "مجاني · بلا إعلانات · بلا تسجيل", "how": "كيف يعمل", "video": "شاهده أثناء العمل", "faq": "أسئلة", "q1": "هل يستنزف البطارية؟", "a1": "لا. ينتظر فقط اتصال الهاتف ببلوتوث السيارة، وهذا لا يستهلك تقريباً أي بطارية.", "q2": "هل يحتاج إلى إنترنت أو حساب؟", "a2": "لا. يعمل على الهاتف نفسه – بلا إنترنت وبلا تسجيل.", "q3": "هل توجد نسخة للآيفون؟", "a3": "ليس بعد. BabySafe متاح حالياً لهواتف أندرويد.", "note": "BabySafe أداة تذكير، ولا يغني عن انتباه الوالدين.", "privacy": "سياسة الخصوصية", "dir": "rtl", "h1": "لا تنسَ طفلاً<br>في السيارة أبداً", "sub": "تنبيه تلقائي لحظة مغادرة السيارة", "steps": [["لمسة واحدة للتشغيل", "ثم يعمل تلقائياً في الخلفية"], ["يعرف متى تقود", "يتصل ببلوتوث سيارتك تلقائياً"], ["تنبيه عند مغادرة السيارة", "صوت واهتزاز وضوء – حتى والشاشة مقفلة"]]}, "ru": {"cta": "Скачать в Google Play", "free": "Бесплатно · Без рекламы · Без регистрации", "how": "Как это работает", "video": "Посмотрите в действии", "faq": "Вопросы", "q1": "Сильно ли садится батарея?", "a1": "Нет. Приложение просто ждёт подключения к Bluetooth автомобиля – это почти не расходует заряд.", "q2": "Нужен ли интернет или аккаунт?", "a2": "Нет. Всё работает прямо на телефоне – без интернета и регистрации.", "q3": "Есть ли версия для iPhone?", "a3": "Пока нет. Сейчас BabySafe доступно для Android.", "note": "BabySafe – это напоминание. Оно не заменяет внимание родителей.", "privacy": "Политика конфиденциальности", "dir": "ltr", "h1": "Никогда не забудьте<br>ребёнка в машине", "sub": "Автоматическое оповещение, как только вы выходите", "steps": [["Включается одним касанием", "Дальше работает сам, в фоне"], ["Знает, когда вы за рулём", "Сам подключается к Bluetooth автомобиля"], ["Сигнал, когда вы выходите", "Голос, вибрация и фонарик – даже на заблокированном экране"]]}, "uk": {"cta": "Завантажити з Google Play", "free": "Безкоштовно · Без реклами · Без реєстрації", "how": "Як це працює", "video": "Подивіться в дії", "faq": "Запитання", "q1": "Чи сильно розряджає батарею?", "a1": "Ні. Застосунок лише чекає підключення до Bluetooth авто – це майже не витрачає заряд.", "q2": "Чи потрібен інтернет або акаунт?", "a2": "Ні. Усе працює на самому телефоні – без інтернету й реєстрації.", "q3": "Чи є версія для iPhone?", "a3": "Поки ні. Наразі BabySafe доступний для Android.", "note": "BabySafe – це нагадування. Воно не замінює уваги батьків.", "privacy": "Політика конфіденційності", "dir": "ltr", "h1": "Ніколи не забудьте<br>дитину в авто", "sub": "Автоматичне сповіщення, щойно ви виходите", "steps": [["Вмикається одним дотиком", "Далі працює сам, у фоні"], ["Знає, коли ви за кермом", "Сам підключається до Bluetooth авто"], ["Сигнал, коли ви виходите", "Голос, вібрація й ліхтарик – навіть на заблокованому екрані"]]}, "es": {"cta": "Disponible en Google Play", "free": "Gratis · Sin anuncios · Sin registro", "how": "Cómo funciona", "video": "Míralo en acción", "faq": "Preguntas", "q1": "¿Gasta mucha batería?", "a1": "No. Solo espera a que el teléfono se conecte al Bluetooth del vehículo, lo que casi no consume batería.", "q2": "¿Necesita internet o una cuenta?", "a2": "No. Funciona en el propio teléfono, sin internet y sin registro.", "q3": "¿Hay versión para iPhone?", "a3": "Todavía no. Por ahora BabySafe está disponible para Android.", "note": "BabySafe es una herramienta de recordatorio. No sustituye la atención de los padres.", "privacy": "Política de privacidad", "dir": "ltr", "h1": "Nunca olvides a un niño<br>en el vehículo", "sub": "Alerta automática en cuanto sales del vehículo", "steps": [["Un toque para activarla", "Después funciona sola, en segundo plano"], ["Sabe cuándo conduces", "Se conecta sola al Bluetooth de tu vehículo"], ["Alerta al salir del vehículo", "Voz, vibración y linterna, incluso con la pantalla bloqueada"]]}, "pt": {"cta": "Disponível no Google Play", "free": "Grátis · Sem anúncios · Sem cadastro", "how": "Como funciona", "video": "Veja em ação", "faq": "Perguntas", "q1": "Gasta muita bateria?", "a1": "Não. Ele só espera o celular se conectar ao Bluetooth do carro, o que quase não gasta bateria.", "q2": "Precisa de internet ou conta?", "a2": "Não. Funciona no próprio celular, sem internet e sem cadastro.", "q3": "Existe versão para iPhone?", "a3": "Ainda não. Por enquanto o BabySafe está disponível para Android.", "note": "O BabySafe é uma ferramenta de lembrete. Não substitui a atenção dos pais.", "privacy": "Política de privacidade", "dir": "ltr", "h1": "Nunca esqueça uma<br>criança no carro", "sub": "Alerta automático assim que sai do carro", "steps": [["Um toque para ativar", "Depois funciona sozinho, em segundo plano"], ["Sabe quando está ao volante", "Conecta-se automaticamente ao Bluetooth do carro"], ["Alerta ao sair do carro", "Voz, vibração e lanterna, mesmo com o aparelho bloqueado"]]}, "fr": {"cta": "Disponible sur Google Play", "free": "Gratuit · Sans pub · Sans inscription", "how": "Comment ça marche", "video": "Voir en action", "faq": "Questions", "q1": "Est-ce que ça vide la batterie ?", "a1": "Non. L’appli attend simplement que le téléphone se connecte au Bluetooth de la voiture, ce qui ne consomme presque rien.", "q2": "Faut-il Internet ou un compte ?", "a2": "Non. Tout fonctionne sur le téléphone, sans Internet ni inscription.", "q3": "Existe-t-il une version iPhone ?", "a3": "Pas encore. BabySafe est actuellement disponible sur Android.", "note": "BabySafe est un outil de rappel. Il ne remplace pas la vigilance des parents.", "privacy": "Politique de confidentialité", "dir": "ltr", "h1": "N’oubliez jamais un enfant<br>dans la voiture", "sub": "Alerte automatique dès que vous quittez la voiture", "steps": [["Une touche pour l’activer", "Ensuite, elle fonctionne seule, en arrière-plan"], ["Sait quand vous conduisez", "Se connecte automatiquement au Bluetooth de la voiture"], ["Alerte quand vous sortez", "Voix, vibration et lampe torche, même écran verrouillé"]]}, "de": {"cta": "Jetzt bei Google Play", "free": "Kostenlos · Keine Werbung · Keine Anmeldung", "how": "So funktioniert’s", "video": "In Aktion ansehen", "faq": "Fragen", "q1": "Verbraucht die App viel Akku?", "a1": "Nein. Sie wartet nur darauf, dass sich das Handy mit dem Auto-Bluetooth verbindet – das kostet kaum Akku.", "q2": "Brauche ich Internet oder ein Konto?", "a2": "Nein. Alles läuft auf dem Handy selbst – ohne Internet und ohne Anmeldung.", "q3": "Gibt es eine iPhone-Version?", "a3": "Noch nicht. BabySafe ist derzeit für Android verfügbar.", "note": "BabySafe ist eine Erinnerungshilfe und ersetzt nicht die Aufmerksamkeit der Eltern.", "privacy": "Datenschutzerklärung", "dir": "ltr", "h1": "Nie wieder ein Kind<br>im Auto vergessen", "sub": "Automatischer Alarm, sobald du aussteigst", "steps": [["Ein Tipp zum Einschalten", "Dann läuft sie von allein im Hintergrund"], ["Erkennt, wenn du fährst", "Verbindet sich automatisch mit dem Auto-Bluetooth"], ["Alarm beim Aussteigen", "Sprache, Vibration und Taschenlampe – auch bei gesperrtem Bildschirm"]]}, "it": {"cta": "Disponibile su Google Play", "free": "Gratis · Senza pubblicità · Senza registrazione", "how": "Come funziona", "video": "Guardala in azione", "faq": "Domande", "q1": "Consuma molta batteria?", "a1": "No. Aspetta solo che il telefono si colleghi al Bluetooth dell’auto, e questo non consuma quasi nulla.", "q2": "Servono internet o un account?", "a2": "No. Funziona direttamente sul telefono, senza internet e senza registrazione.", "q3": "Esiste una versione per iPhone?", "a3": "Non ancora. Per ora BabySafe è disponibile per Android.", "note": "BabySafe è uno strumento di promemoria. Non sostituisce l’attenzione dei genitori.", "privacy": "Informativa sulla privacy", "dir": "ltr", "h1": "Mai più un bambino<br>dimenticato in auto", "sub": "Avviso automatico appena scendi dall’auto", "steps": [["Un tocco per attivarla", "Poi funziona da sola, in background"], ["Sa quando guidi", "Si collega da sola al Bluetooth dell’auto"], ["Avviso quando scendi dall’auto", "Voce, vibrazione e torcia, anche a schermo bloccato"]]}, "tr": {"cta": "Google Play’den indirin", "free": "Ücretsiz · Reklamsız · Kayıt gerekmez", "how": "Nasıl çalışır", "video": "Uygulamayı izleyin", "faq": "Sorular", "q1": "Pili çok tüketir mi?", "a1": "Hayır. Yalnızca telefonun aracın Bluetooth’una bağlanmasını bekler; bu neredeyse hiç pil harcamaz.", "q2": "İnternet veya hesap gerekir mi?", "a2": "Hayır. Her şey telefonun kendisinde çalışır – internet ve kayıt gerekmez.", "q3": "iPhone sürümü var mı?", "a3": "Henüz yok. BabySafe şu anda Android için mevcut.", "note": "BabySafe bir hatırlatma aracıdır. Ebeveyn dikkatinin yerini tutmaz.", "privacy": "Gizlilik politikası", "dir": "ltr", "h1": "Araçta asla<br>çocuk unutmayın", "sub": "Araçtan indiğiniz anda otomatik uyarı", "steps": [["Tek dokunuşla açın", "Sonra arka planda kendi kendine çalışır"], ["Ne zaman sürdüğünüzü bilir", "Aracın Bluetooth’una otomatik bağlanır"], ["Araçtan inince uyarı", "Ses, titreşim ve fener – ekran kilitliyken bile"]]}, "hi": {"cta": "Google Play पर पाएँ", "free": "मुफ़्त · कोई विज्ञापन नहीं · कोई साइन-अप नहीं", "how": "यह कैसे काम करता है", "video": "इसे काम करते देखें", "faq": "सवाल", "q1": "क्या यह बैटरी ज़्यादा खाता है?", "a1": "नहीं। यह बस फ़ोन के कार के ब्लूटूथ से जुड़ने का इंतज़ार करता है, जिसमें लगभग कोई बैटरी नहीं लगती।", "q2": "क्या इंटरनेट या अकाउंट चाहिए?", "a2": "नहीं। सब कुछ फ़ोन पर ही चलता है – बिना इंटरनेट, बिना साइन-अप।", "q3": "क्या iPhone वर्ज़न है?", "a3": "अभी नहीं। फ़िलहाल BabySafe Android फ़ोन के लिए उपलब्ध है।", "note": "BabySafe एक रिमाइंडर टूल है। यह माता-पिता के ध्यान की जगह नहीं लेता।", "privacy": "गोपनीयता नीति", "dir": "ltr", "h1": "कार में बच्चे को<br>कभी न भूलें", "sub": "कार से उतरते ही अपने-आप अलर्ट", "steps": [["एक टैप में चालू", "फिर यह बैकग्राउंड में खुद काम करता है"], ["जानता है कब आप गाड़ी चला रहे हैं", "कार के ब्लूटूथ से अपने-आप जुड़ता है"], ["कार से उतरते ही अलर्ट", "आवाज़, वाइब्रेशन और फ़्लैशलाइट – लॉक स्क्रीन पर भी"]]}, "zh": {"cta": "在 Google Play 下载", "free": "免费 · 无广告 · 无需注册", "how": "如何使用", "video": "观看演示", "faq": "常见问题", "q1": "会很耗电吗？", "a1": "不会。它只是等待手机连接车载蓝牙，几乎不耗电。", "q2": "需要网络或账号吗？", "a2": "不需要。一切都在手机上运行，无需网络，无需注册。", "q3": "有 iPhone 版吗？", "a3": "暂时没有。BabySafe 目前适用于安卓手机。", "note": "BabySafe 是一款提醒工具，不能代替家长的注意。", "privacy": "隐私政策", "dir": "ltr", "h1": "永远不要把孩子<br>遗忘在车里", "sub": "下车那一刻 自动提醒", "steps": [["一键开启", "之后在后台自动运行"], ["知道你何时开车", "自动连接车载蓝牙"], ["下车时提醒", "语音、振动和闪光灯，锁屏时也有效"]]}, "zht": {"cta": "在 Google Play 下載", "free": "免費 · 無廣告 · 免註冊", "how": "如何運作", "video": "觀看示範", "faq": "常見問題", "q1": "會很耗電嗎？", "a1": "不會。它只是等待手機連接車用藍牙，幾乎不耗電。", "q2": "需要網路或帳號嗎？", "a2": "不需要。一切都在手機上運作，不需網路，也不用註冊。", "q3": "有 iPhone 版嗎？", "a3": "目前還沒有。BabySafe 現在適用於 Android 手機。", "note": "BabySafe 是提醒工具，無法取代家長的注意。", "privacy": "隱私權政策", "dir": "ltr", "h1": "絕不把孩子<br>遺忘在車內", "sub": "下車那一刻 自動提醒", "steps": [["一鍵開啟", "之後在背景自動運作"], ["知道你何時開車", "自動連接車用藍牙"], ["下車時提醒", "語音、震動和手電筒，鎖定螢幕時也有效"]]}, "ja": {"cta": "Google Play で手に入れよう", "free": "無料 · 広告なし · 登録不要", "how": "使い方", "video": "動画で見る", "faq": "よくある質問", "q1": "バッテリーを消耗しますか？", "a1": "いいえ。スマホが車のBluetoothにつながるのを待つだけなので、ほとんど電池を使いません。", "q2": "ネット接続やアカウントは必要？", "a2": "不要です。すべてスマホ上で動作し、ネット接続も登録もいりません。", "q3": "iPhone版はありますか？", "a3": "まだありません。現在BabySafeはAndroid版のみです。", "note": "BabySafeはリマインダーです。保護者の注意の代わりにはなりません。", "privacy": "プライバシーポリシー", "dir": "ltr", "h1": "車内に子どもを<br>置き忘れない", "sub": "車を降りた瞬間に 自動でお知らせ", "steps": [["ワンタップでオン", "あとはバックグラウンドで自動で動作"], ["運転中を自動で認識", "車のBluetoothに自動で接続"], ["降車時にアラート", "音声・振動・ライトで通知（ロック画面でも）"]]}, "ko": {"cta": "Google Play에서 받기", "free": "무료 · 광고 없음 · 가입 불필요", "how": "작동 방식", "video": "영상으로 보기", "faq": "자주 묻는 질문", "q1": "배터리를 많이 쓰나요?", "a1": "아니요. 휴대폰이 차량 블루투스에 연결되기만 기다리기 때문에 배터리를 거의 쓰지 않아요.", "q2": "인터넷이나 계정이 필요한가요?", "a2": "아니요. 모든 기능이 휴대폰에서 작동하며 인터넷도 가입도 필요 없어요.", "q3": "아이폰 버전이 있나요?", "a3": "아직 없어요. 현재 BabySafe는 안드로이드용입니다.", "note": "BabySafe는 알림 도구이며 보호자의 주의를 대신하지 않습니다.", "privacy": "개인정보처리방침", "dir": "ltr", "h1": "차 안에 아이를<br>절대 두고 내리지 마세요", "sub": "차에서 내리는 순간 자동 알림", "steps": [["한 번 탭으로 켜기", "이후엔 백그라운드에서 알아서 작동"], ["운전 중임을 알아요", "차량 블루투스에 자동 연결"], ["차에서 내리면 알림", "음성, 진동, 손전등 – 잠금 화면에서도"]]}, "id": {"cta": "Dapatkan di Google Play", "free": "Gratis · Tanpa iklan · Tanpa daftar", "how": "Cara kerjanya", "video": "Lihat cara kerjanya", "faq": "Pertanyaan", "q1": "Apakah boros baterai?", "a1": "Tidak. Aplikasi hanya menunggu ponsel terhubung ke Bluetooth mobil, dan itu hampir tidak memakai baterai.", "q2": "Perlu internet atau akun?", "a2": "Tidak. Semuanya berjalan di ponsel – tanpa internet, tanpa daftar.", "q3": "Ada versi iPhone?", "a3": "Belum. Saat ini BabySafe tersedia untuk Android.", "note": "BabySafe adalah alat pengingat. Tidak menggantikan perhatian orang tua.", "privacy": "Kebijakan privasi", "dir": "ltr", "h1": "Jangan pernah lupakan<br>anak di mobil", "sub": "Peringatan otomatis saat Anda turun dari mobil", "steps": [["Sekali ketuk untuk aktif", "Lalu bekerja sendiri di latar belakang"], ["Tahu saat Anda menyetir", "Terhubung otomatis ke Bluetooth mobil"], ["Peringatan saat turun dari mobil", "Suara, getar, dan senter – bahkan saat layar terkunci"]]}, "vi": {"cta": "Tải trên Google Play", "free": "Miễn phí · Không quảng cáo · Không cần đăng ký", "how": "Cách hoạt động", "video": "Xem cách hoạt động", "faq": "Câu hỏi", "q1": "Ứng dụng có tốn pin không?", "a1": "Không. Ứng dụng chỉ chờ điện thoại kết nối Bluetooth trên xe, gần như không tốn pin.", "q2": "Có cần internet hay tài khoản không?", "a2": "Không. Mọi thứ chạy ngay trên điện thoại – không cần internet, không cần đăng ký.", "q3": "Có bản cho iPhone không?", "a3": "Chưa có. Hiện BabySafe dành cho điện thoại Android.", "note": "BabySafe là công cụ nhắc nhở, không thay thế sự chú ý của cha mẹ.", "privacy": "Chính sách quyền riêng tư", "dir": "ltr", "h1": "Không bao giờ quên<br>trẻ trong xe", "sub": "Cảnh báo tự động ngay khi bạn rời xe", "steps": [["Bật chỉ với một chạm", "Sau đó tự hoạt động ở chế độ nền"], ["Biết khi bạn lái xe", "Tự kết nối với Bluetooth trên xe"], ["Cảnh báo khi rời xe", "Giọng nói, rung và đèn pin – kể cả khi khóa màn hình"]]}, "pl": {"cta": "Pobierz z Google Play", "free": "Za darmo · Bez reklam · Bez rejestracji", "how": "Jak to działa", "video": "Zobacz w akcji", "faq": "Pytania", "q1": "Czy rozładowuje baterię?", "a1": "Nie. Aplikacja tylko czeka, aż telefon połączy się z Bluetooth samochodu – to prawie nie zużywa baterii.", "q2": "Czy potrzebny jest internet lub konto?", "a2": "Nie. Wszystko działa w telefonie – bez internetu i bez rejestracji.", "q3": "Czy jest wersja na iPhone’a?", "a3": "Jeszcze nie. Obecnie BabySafe jest dostępna na Androida.", "note": "BabySafe to narzędzie przypominające. Nie zastępuje uwagi rodzica.", "privacy": "Polityka prywatności", "dir": "ltr", "h1": "Nigdy nie zapomnij<br>dziecka w aucie", "sub": "Automatyczny alarm, gdy tylko wysiadasz", "steps": [["Włączasz jednym dotknięciem", "Potem działa sama, w tle"], ["Wie, kiedy prowadzisz", "Sama łączy się z Bluetooth samochodu"], ["Alarm, gdy wysiadasz", "Głos, wibracje i latarka – nawet przy zablokowanym ekranie"]]}, "nl": {"cta": "Ontdek het op Google Play", "free": "Gratis · Geen advertenties · Geen account", "how": "Zo werkt het", "video": "Bekijk het in actie", "faq": "Vragen", "q1": "Kost het veel batterij?", "a1": "Nee. De app wacht alleen tot je telefoon verbinding maakt met de Bluetooth van de auto – dat kost bijna geen batterij.", "q2": "Heb ik internet of een account nodig?", "a2": "Nee. Alles werkt op de telefoon zelf – zonder internet en zonder account.", "q3": "Is er een iPhone-versie?", "a3": "Nog niet. BabySafe is nu beschikbaar voor Android.", "note": "BabySafe is een herinneringshulp en vervangt de aandacht van ouders niet.", "privacy": "Privacybeleid", "dir": "ltr", "h1": "Vergeet nooit een kind<br>in de auto", "sub": "Automatisch alarm zodra je uitstapt", "steps": [["Met één tik aan", "Daarna werkt hij vanzelf op de achtergrond"], ["Weet wanneer je rijdt", "Verbindt automatisch met de Bluetooth van je auto"], ["Alarm als je uitstapt", "Stem, trilling en zaklamp – ook op een vergrendeld scherm"]]}};
+const NAMES={en:"English",he:"עברית",ar:"العربية",ru:"Русский",uk:"Українська",es:"Español",pt:"Português",fr:"Français",de:"Deutsch",it:"Italiano",tr:"Türkçe",hi:"हिन्दी",zh:"简体中文",zht:"繁體中文",ja:"日本語",ko:"한국어",id:"Bahasa Indonesia",vi:"Tiếng Việt",pl:"Polski",nl:"Nederlands"};
+const HL={zht:"zh-TW",zh:"zh-CN",he:"iw"};
+const STORE="https://play.google.com/store/apps/details?id=com.gilalon.babysafe";
+function pick(){
+  const q=new URLSearchParams(location.search).get("lang");
+  if(q&&T[q])return q;
+  for(const l of (navigator.languages||[navigator.language||"en"])){
+    const s=l.toLowerCase();
+    if(s.startsWith("zh"))return /tw|hk|mo|hant/.test(s)?"zht":"zh";
+    let b=s.split("-")[0];if(b==="iw")b="he";if(b==="in")b="id";
+    if(T[b])return b;
+  }
+  return "en";
+}
+const sel=document.getElementById("lang");
+for(const k in NAMES){const o=document.createElement("option");o.value=k;o.textContent=NAMES[k];sel.appendChild(o);}
+function apply(l){
+  const t=T[l];
+  document.documentElement.lang=l==="zht"?"zh-Hant":l;
+  document.documentElement.dir=t.dir;
+  document.querySelectorAll("[data-t]").forEach(e=>{const v=t[e.dataset.t];if(e.dataset.t==="h1")e.innerHTML=v;else e.textContent=v;});
+  document.querySelectorAll("[data-play]").forEach(a=>a.href=STORE+"&hl="+(HL[l]||l));
+  document.title="BabySafe – "+t.h1.replace(/<br>/g," ");
+  document.getElementById("heroimg").src="img/"+l+"/3.webp";
+  document.getElementById("steps").innerHTML=t.steps.map(s=>`<div class="step"><b></b><span></span></div>`).join("");
+  document.querySelectorAll(".step").forEach((e,i)=>{e.querySelector("b").textContent=t.steps[i][0];e.querySelector("span").textContent=t.steps[i][1];});
+  document.getElementById("gallery").innerHTML=[1,2,3,4].map(n=>`<img loading="lazy" src="img/${l}/${n}.webp" width="240" height="427" alt="">`).join("");
+  sel.value=l;
+}
+sel.onchange=()=>{apply(sel.value);const u=new URL(location);u.searchParams.set("lang",sel.value);history.replaceState(null,"",u);};
+document.getElementById("vbtn").onclick=function(){const f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/vDju8QVbLRM?autoplay=1&rel=0";f.allow="autoplay; encrypted-media; picture-in-picture";f.allowFullscreen=true;this.replaceWith(f);};
+apply(pick());
+</script>
+</body>
+</html>
