@@ -44,7 +44,7 @@ h2{font-size:clamp(26px,3.2vw,36px);margin:0 0 28px;font-weight:800;letter-spaci
 .gallery{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
 .gallery img{flex:0 0 auto;width:min(240px,62vw);border-radius:18px;scroll-snap-align:start;border:1px solid var(--line)}
 .video{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;max-width:860px}
-.video iframe,.video button{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video button{cursor:pointer;background:#000 center/cover no-repeat;display:grid;place-items:center}
 .video button span{width:76px;height:54px;border-radius:14px;background:#f00;display:grid;place-items:center}
 details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:12px;max-width:760px}
@@ -89,7 +89,7 @@ footer a{color:inherit}
 
 <section><div class="wrap">
   <h2 data-t="video"></h2>
-  <div class="video"><button id="vbtn" aria-label="Play video" style="background-image:url(https://i.ytimg.com/vi/vDju8QVbLRM/hqdefault.jpg)"><span><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="M8 5v14l11-7z"/></svg></span></button></div>
+  <div class="video"><video controls playsinline preload="metadata" src="BabySafe_promo_EN.mp4#t=0.5"></video></div>
 </div></section>
 
 <section><div class="wrap">
@@ -143,7 +143,6 @@ function apply(l){
   sel.value=l;
 }
 sel.onchange=()=>{apply(sel.value);const u=new URL(location);u.searchParams.set("lang",sel.value);history.replaceState(null,"",u);};
-document.getElementById("vbtn").onclick=function(){const f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/vDju8QVbLRM?autoplay=1&rel=0";f.allow="autoplay; encrypted-media; picture-in-picture";f.allowFullscreen=true;this.replaceWith(f);};
 apply(pick());
 </script>
 </body>
