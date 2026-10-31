@@ -91,7 +91,7 @@ footer a{color:inherit}
 
 <section><div class="wrap">
   <h2 data-t="video"></h2>
-  <div class="video"><video controls playsinline preload="metadata" src="BabySafe_promo_EN.mp4#t=0.5"></video></div>
+  <div class="video"><video id="vid" controls playsinline preload="metadata"></video></div>
 </div></section>
 
 <section><div class="wrap">
@@ -144,6 +144,7 @@ function apply(l){
   document.querySelectorAll(".step").forEach((e,i)=>{e.querySelector("b").textContent=t.steps[i][0];e.querySelector("span").textContent=t.steps[i][1];});
   document.getElementById("gallery").innerHTML=[1,2,3,4].map(n=>`<img loading="lazy" src="img/${l}/${n}.webp" width="240" height="427" alt="">`).join("");
   document.getElementById("scan").textContent=SCAN[l];
+  document.getElementById("vid").src="video/BabySafe_anim_"+l+".mp4#t=4";
   sel.value=l;
 }
 sel.onchange=()=>{apply(sel.value);const u=new URL(location);u.searchParams.set("lang",sel.value);history.replaceState(null,"",u);};
