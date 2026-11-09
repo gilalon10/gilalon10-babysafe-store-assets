@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gilalon10.github.io/gilalon10-babysafe-store-assets/sitemap.xml
