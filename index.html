@@ -5,122 +5,294 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BabySafe – Never forget a child in the car</title>
 <meta name="description" content="BabySafe reminds you to check the back seat every time you leave the car. Automatic alert when your phone disconnects from the car's Bluetooth. Free, no ads, 19 languages.">
+<link rel="canonical" href="https://gilalon10.github.io/gilalon10-babysafe-store-assets/">
 <meta property="og:title" content="BabySafe – Never forget a child in the car">
 <meta property="og:description" content="Automatic alert the moment you leave the car. Free, no ads, 19 languages.">
-<meta property="og:image" content="img/og.jpg">
+<meta property="og:image" content="https://gilalon10.github.io/gilalon10-babysafe-store-assets/img/og.jpg">
+<meta property="og:url" content="https://gilalon10.github.io/gilalon10-babysafe-store-assets/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#16294A">
 <link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="img/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Heebo:wght@400;500;700;800&family=Noto+Sans+Arabic:wght@400;600;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"BabySafe – Car Seat Reminder","operatingSystem":"Android","applicationCategory":"LifestyleApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://play.google.com/store/apps/details?id=com.gilalon.babysafe","author":{"@type":"Person","name":"Gil Alon"},"image":"https://gilalon10.github.io/gilalon10-babysafe-store-assets/img/icon.png","description":"Automatic reminder to check the back seat the moment you leave the car. Free, no ads, no sign-up, 19 languages."}
+</script>
 <style>
-:root{--navy:#2C4A7A;--green:#2DB55D;--green-soft:#E6F7EC;--bg:#F4F4F0;--ink:#1C1C1E;--muted:#4A4A50;--card:#fff;--line:#E3E3DC;--alert:#F2552C}
-@media (prefers-color-scheme:dark){:root{--bg:#121417;--ink:#F2F2F0;--muted:#B4B6BC;--card:#1C1F24;--line:#2A2E35;--green-soft:#143322;--navy:#8FB0E6}}
+:root{
+  --navy:#16294A;--navy2:#1F3A68;--blue:#3E6FB8;--green:#20A957;--green2:#2DC46A;--mint:#E3F6EA;
+  --coral:#F2552C;--coral-soft:#FDEBE5;
+  --bg:#F7F6F2;--bg2:#FFFFFF;--ink:#14171C;--muted:#545A63;--line:#E4E2DA;--card:#FFFFFF;
+  --shadow:0 1px 2px rgba(20,23,28,.04),0 12px 32px -12px rgba(20,23,28,.14);
+  --r:22px;
+  --font:"Plus Jakarta Sans",Heebo,"Noto Sans Arabic","Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1116;--bg2:#141821;--ink:#F1F2F4;--muted:#A7ADB7;--line:#262B35;--card:#171B24;--mint:#12301F;--coral-soft:#3A1C14;--shadow:0 1px 2px rgba(0,0,0,.3),0 16px 40px -16px rgba(0,0,0,.6)}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.5px;text-decoration:none}
-.brand img{width:36px;height:36px;border-radius:9px}
-.brand .b1{color:var(--navy)}.brand .b2{color:var(--green)}
-select{font:inherit;font-size:14px;padding:7px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:30px 0 60px}
-h1{font-size:clamp(34px,5.4vw,58px);line-height:1.08;margin:0 0 18px;font-weight:800;letter-spacing:-1px;text-wrap:balance}
-.sub{font-size:clamp(17px,2vw,21px);color:var(--muted);margin:0 0 30px;max-width:30ch}
-.play{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--bg);text-decoration:none;padding:14px 24px;border-radius:14px;font-weight:600;font-size:18px;transition:transform .15s}
-.play:hover{transform:translateY(-2px)}
-.play svg{width:26px;height:26px}
-.free{margin-top:14px;font-size:15px;color:var(--muted)}
-.phone{justify-self:center;width:min(320px,80vw);border-radius:28px;box-shadow:0 30px 60px -20px rgba(28,28,30,.35);display:block}
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(26px,3.2vw,36px);margin:0 0 28px;font-weight:800;letter-spacing:-.5px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
-.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
-.step::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green-soft);color:var(--green);font-weight:800;margin-bottom:14px}
-.step b{display:block;font-size:19px;margin-bottom:6px}
-.step span{color:var(--muted);font-size:15px}
-.gallery{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
-.gallery img{flex:0 0 auto;width:min(240px,62vw);border-radius:18px;scroll-snap-align:start;border:1px solid var(--line)}
-.video{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;max-width:860px}
-.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
-.video button{cursor:pointer;background:#000 center/cover no-repeat;display:grid;place-items:center}
-.video button span{width:76px;height:54px;border-radius:14px;background:#f00;display:grid;place-items:center}
-details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:12px;max-width:760px}
-summary{cursor:pointer;font-weight:600;font-size:17px}
-details p{margin:10px 0 0;color:var(--muted)}
-.note{max-width:760px;margin-top:22px;padding:14px 18px;border-inline-start:4px solid var(--alert);background:var(--card);border-radius:10px;font-size:15px}
-.cta2{text-align:center}
-footer{padding:30px 0 50px;color:var(--muted);font-size:14px;display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid var(--line)}
-footer a{color:inherit}
-@media (max-width:760px){.hero{grid-template-columns:1fr;text-align:center;padding-top:10px}.sub{margin-inline:auto}.steps{grid-template-columns:1fr}.phone{order:-1;width:min(240px,64vw)}}
-.qrbox{display:none;align-items:center;gap:16px;margin-top:22px;padding:12px;padding-inline-end:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;width:max-content;max-width:100%}.qrbox svg{border-radius:8px;display:block}.qrbox span{font-size:15px;color:var(--muted);max-width:16ch}@media (hover:hover) and (pointer:fine) and (min-width:761px){.qrbox{display:flex}}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html[lang=he] body{font-family:Heebo,var(--font)}
+html[lang=ar] body{font-family:"Noto Sans Arabic",var(--font)}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;letter-spacing:-.4px;text-decoration:none;font-family:"Plus Jakarta Sans",sans-serif}
+.brand img{width:34px;height:34px;border-radius:9px}
+.b1{color:var(--navy2)}.b2{color:var(--green)}
+@media (prefers-color-scheme:dark){.b1{color:#9DBBEA}}
+.nav{display:flex;gap:26px;margin-inline-start:auto;font-size:15px;font-weight:600}
+.nav a{text-decoration:none;color:var(--muted)}.nav a:hover{color:var(--ink)}
+.lang{position:relative}
+.lang select{appearance:none;-webkit-appearance:none;font:inherit;font-size:14px;font-weight:600;padding:8px 32px 8px 34px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+html[dir=rtl] .lang select{padding:8px 34px 8px 32px}
+.lang svg{position:absolute;top:50%;transform:translateY(-50%);pointer-events:none;inset-inline-start:11px;width:16px;height:16px;color:var(--muted)}
+.lang:after{content:"";position:absolute;top:50%;inset-inline-end:14px;width:6px;height:6px;border:solid var(--muted);border-width:0 2px 2px 0;transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;white-space:nowrap}
+
+.freebar{background:linear-gradient(90deg,#17944B,#22B35E);color:#fff;text-align:center;font-weight:700;font-size:15px;padding:9px 16px;letter-spacing:.01em}
+.freebar b{font-weight:800;text-transform:uppercase;letter-spacing:.06em}.freebar .dot{opacity:.6;margin:0 10px}
+.freebar .rest:before{content:"·";opacity:.6;margin:0 10px}@media (max-width:560px){.freebar .rest{display:none}}
+/* hero */
+.hero{position:relative;padding:56px 0 90px;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:-80px 0 0;z-index:-1;background:
+  radial-gradient(600px 420px at 78% 38%,rgba(45,196,106,.22),transparent 70%),
+  radial-gradient(520px 380px at 92% 80%,rgba(62,111,184,.18),transparent 70%),
+  radial-gradient(500px 300px at 10% 0%,rgba(62,111,184,.10),transparent 70%)}
+html[dir=rtl] .hero:before{transform:scaleX(-1)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--green);box-shadow:0 8px 20px -8px rgba(32,169,87,.6);padding:8px 18px 8px 14px;border-radius:999px;margin-bottom:22px}
+.eyebrow i{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.3);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(255,255,255,0)}}
+h1{font-size:clamp(40px,6vw,72px);line-height:1.04;margin:0 0 22px;font-weight:800;letter-spacing:-.035em;text-wrap:balance}
+html[lang=he] h1,html[lang=ar] h1{letter-spacing:-.01em;line-height:1.12}
+.sub{font-size:clamp(18px,2.1vw,22px);color:var(--muted);margin:0 0 34px;max-width:32ch}
+.ctarow{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.play{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--bg);text-decoration:none;padding:14px 26px 14px 20px;border-radius:16px;font-weight:700;font-size:18px;box-shadow:0 10px 30px -10px rgba(20,23,28,.5);transition:transform .15s,box-shadow .15s}
+html[dir=rtl] .play{padding:14px 20px 14px 26px}
+.play:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(20,23,28,.55)}
+.play svg{width:28px;height:28px;flex:none}
+@media (prefers-color-scheme:dark){.play{background:#fff;color:#14171C}}
+.stars{display:flex;flex-direction:column;font-size:14px;color:var(--muted);line-height:1.35}
+.stars b{color:var(--ink);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:30px;padding:0;list-style:none}
+.chips li{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:600;color:var(--muted)}
+.chips svg{width:18px;height:18px;color:var(--green);flex:none}
+.qrbox{display:none;align-items:center;gap:14px;margin-top:30px;padding:10px;padding-inline-end:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;width:max-content;box-shadow:var(--shadow)}
+.qrbox svg{border-radius:8px;display:block}
+.qrbox span{font-size:14px;font-weight:600;color:var(--muted);max-width:15ch;line-height:1.35}
+@media (hover:hover) and (pointer:fine) and (min-width:900px){.qrbox{display:flex}}
+
+.stage{position:relative;justify-self:center;width:min(330px,78vw)}
+.stage .ph{display:block;width:100%;height:auto;border-radius:36px;box-shadow:0 50px 80px -30px rgba(22,41,74,.45),0 0 0 1px rgba(0,0,0,.04);transform:rotate(-2deg)}
+html[dir=rtl] .stage .ph{transform:rotate(2deg)}
+.float{position:absolute;display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 14px;font-size:14px;font-weight:700;box-shadow:var(--shadow);max-width:230px;line-height:1.3;animation:bob 5s ease-in-out infinite}
+.float .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none}
+.float .ic svg{width:19px;height:19px}
+.f1{top:34%;inset-inline-start:-36%}.f1 .ic{background:var(--mint);color:var(--green)}
+.f2{bottom:9%;inset-inline-end:-24%;animation-delay:-2.5s}.f2 .ic{background:var(--coral-soft);color:var(--coral)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+
+/* sections */
+section{padding:96px 0}
+.kicker{font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin:0 0 12px}
+h2{font-size:clamp(30px,4vw,46px);line-height:1.12;margin:0 0 18px;font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+.lead{font-size:19px;color:var(--muted);max-width:56ch;margin:0}
+
+/* why */
+.why{background:var(--navy);color:#EEF2F8;position:relative;overflow:hidden}
+.why:before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 85% 10%,rgba(45,196,106,.18),transparent 70%),radial-gradient(500px 400px at 0% 100%,rgba(62,111,184,.35),transparent 70%)}
+.why .wrap{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.why .kicker{color:#7FE0A5}
+.big{font-size:clamp(84px,13vw,168px);font-weight:800;line-height:.9;letter-spacing:-.05em;font-family:"Plus Jakarta Sans",sans-serif;background:linear-gradient(135deg,#fff 30%,#7FE0A5);-webkit-background-clip:text;background-clip:text;color:transparent;direction:ltr;display:inline-block}
+.why p{font-size:19px;color:#C8D2E2;margin:0 0 14px;max-width:52ch}
+.why p.s1{font-size:22px;color:#fff;font-weight:600}
+.why .src{font-size:13px;color:#93A3BC}
+.why .src a{color:#93A3BC}
+
+/* steps */
+.head{max-width:720px;margin-bottom:48px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;box-shadow:var(--shadow);position:relative}
+.step .n{position:absolute;top:22px;inset-inline-end:24px;font-weight:800;font-size:15px;color:var(--line);font-family:"Plus Jakarta Sans",sans-serif}
+@media (prefers-color-scheme:dark){.step .n{color:#3a4150}}
+.step .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;margin-bottom:20px}
+.step .ic svg{width:26px;height:26px}
+.step:nth-child(1) .ic{background:var(--mint);color:var(--green)}
+.step:nth-child(2) .ic{background:rgba(62,111,184,.12);color:var(--blue)}
+.step:nth-child(3) .ic{background:var(--coral-soft);color:var(--coral)}
+.step b{display:block;font-size:20px;line-height:1.3;margin-bottom:8px;letter-spacing:-.01em}
+.step span{color:var(--muted);font-size:16px}
+
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.gallery img{width:100%;height:auto;border-radius:20px;border:1px solid var(--line);display:block;background:var(--card)}
+
+/* video */
+.vbox{position:relative;aspect-ratio:16/9;border-radius:28px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(22,41,74,.45);max-width:980px;margin:0 auto}
+.vbox video{position:absolute;inset:0;width:100%;height:100%}
+.center{text-align:center}.center .lead{margin-inline:auto}.center .head{margin-inline:auto}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+details{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:12px;transition:box-shadow .2s}
+details[open]{box-shadow:var(--shadow)}
+summary{cursor:pointer;font-weight:700;font-size:18px;padding:20px 24px;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:24px;font-weight:500;color:var(--muted);transition:transform .2s;flex:none;line-height:1}
+details[open] summary:after{transform:rotate(45deg)}
+details p{margin:0;padding:0 24px 22px;color:var(--muted);font-size:16px}
+.note{margin-top:20px;padding:16px 20px;border-inline-start:4px solid var(--coral);background:var(--card);border-radius:12px;font-size:15px;color:var(--muted)}
+
+/* guide + final */
+.guide{display:flex;align-items:center;gap:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 30px;box-shadow:var(--shadow);text-decoration:none;max-width:860px;margin:0 auto;transition:transform .15s}
+.guide:hover{transform:translateY(-2px)}
+.guide .ic{width:56px;height:56px;border-radius:16px;background:var(--mint);color:var(--green);display:grid;place-items:center;flex:none}
+.guide .ic svg{width:28px;height:28px}
+.guide small{display:block;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.guide b{display:block;font-size:20px;line-height:1.3;margin:2px 0}
+.guide .go{margin-inline-start:auto;font-weight:700;font-size:15px;white-space:nowrap;color:var(--muted)}
+html[dir=rtl] .guide .go .ar{display:inline-block;transform:scaleX(-1)}
+.final{padding:0 0 96px}
+.final .box{background:linear-gradient(135deg,#1A9E50,#22B35E 45%,#2E7DBF);color:#fff;border-radius:32px;padding:64px 40px;text-align:center;position:relative;overflow:hidden}
+.final .box:before{content:"";position:absolute;inset:0;background:radial-gradient(400px 260px at 15% 0%,rgba(255,255,255,.25),transparent 70%)}
+.final h2{color:#fff;position:relative;margin-bottom:28px}
+.final .play{background:#fff;color:#14171C;position:relative}
+.final img{width:72px;height:72px;border-radius:18px;box-shadow:0 10px 30px -10px rgba(0,0,0,.4);margin-bottom:20px;position:relative}
+
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;gap:14px 28px;flex-wrap:wrap;align-items:center}
+footer .brand{font-size:17px}footer .brand img{width:26px;height:26px;border-radius:7px}
+footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+footer .sp{margin-inline-start:auto}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.float,.eyebrow i{animation:none}}
+
+@media (max-width:980px){
+  .nav{display:none}.lang{margin-inline-start:auto}
+  .hero .wrap,.why .wrap,.faq .wrap{grid-template-columns:1fr}
+  .hero{padding-top:28px;text-align:center}
+  .sub{margin-inline:auto}.ctarow,.chips{justify-content:center}
+  .stage{width:min(270px,64vw);margin-top:10px}
+  .f1{inset-inline-start:-22%}.f2{inset-inline-end:-18%}
+  .steps{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(4,72%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .gallery img{scroll-snap-align:center}
+  section{padding:72px 0}
+  .faq .wrap{gap:28px}
+}
+@media (max-width:560px){
+  .btn-s{display:none}
+  .float{font-size:12px;padding:8px 10px;max-width:170px}.float .ic{width:28px;height:28px}
+  .f1{display:none}.f2{inset-inline-end:-12%}
+  .guide{flex-wrap:wrap;padding:22px}.guide .go{margin-inline-start:0}
+  .final .box{padding:48px 22px}
+  .play{font-size:16px}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <a class="brand" href="#"><img src="img/icon.png" alt=""><span><span class="b1">Baby</span><span class="b2">Safe</span></span></a>
-  <select id="lang" aria-label="Language"></select>
-</header>
+<div class="freebar"><b data-x="b0"></b><span class="rest" id="fbrest"></span></div>
+<header class="top" id="top"><div class="wrap">
+  <a class="brand" href="#"><img src="img/icon.png" alt="" width="34" height="34"><span><span class="b1">Baby</span><span class="b2">Safe</span></span></a>
+  <nav class="nav"><a href="#how" data-t="how"></a><a href="#video" data-t="video"></a><a href="#faq" data-t="faq"></a><a class="guide-link" href="guides/en.html" data-x="gk"></a></nav>
+  <label class="lang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg><select id="lang" aria-label="Language"></select></label>
+  <a class="btn-s" data-play target="_blank" rel="noopener">Google Play</a>
+</div></header>
 
-<div class="hero">
+<div class="hero"><div class="wrap">
   <div>
+    <div class="eyebrow"><i></i><span data-x="b0"></span></div>
     <h1 data-t="h1"></h1>
     <p class="sub" data-t="sub"></p>
-    <a class="play" data-play target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#2DB55D" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#FBBC04" d="m17.3 8.5-3.5 3.5 3.5 3.5 4-2.3c.9-.5.9-1.9 0-2.4z"/><path fill="#4285F4" d="M3.6 1.8c.3-.1.7-.1 1.1.1l12.6 6.6-3.5 3.5z"/><path fill="#EA4335" d="m13.8 12 3.5 3.5-12.6 6.6c-.4.2-.8.2-1.1.1z"/></svg>
-      <span data-t="cta"></span>
-    </a>
-    <div class="free" data-t="free"></div>
-    <div class="qrbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41" width="132" height="132" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h41v41h-41z"/><path class="qrline" stroke="#1c1c1e" d="M2 2.5h7m2 0h2m1 0h3m1 0h1m1 0h1m1 0h2m2 0h2m2 0h1m1 0h7m-37 1h1m5 0h1m2 0h4m4 0h3m4 0h4m2 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m5 0h2m2 0h4m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h11m1 0h1m2 0h2m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h1m2 0h1m2 0h3m1 0h2m4 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h2m1 0h1m1 0h1m2 0h1m1 0h1m3 0h1m2 0h1m1 0h2m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h4m1 0h2m8 0h1m4 0h1m-29 1h1m1 0h5m4 0h1m1 0h1m1 0h1m2 0h1m1 0h7m3 0h5m-34 1h2m1 0h1m2 0h3m1 0h1m1 0h5m3 0h1m2 0h1m6 0h1m3 0h1m-35 1h1m2 0h4m1 0h2m3 0h1m2 0h1m2 0h3m2 0h3m2 0h4m1 0h2m-34 1h1m3 0h2m5 0h1m1 0h1m4 0h1m4 0h1m1 0h1m1 0h2m1 0h1m2 0h1m-32 1h3m4 0h2m2 0h2m2 0h1m1 0h1m1 0h3m2 0h4m1 0h3m-37 1h4m1 0h1m1 0h2m3 0h3m1 0h6m1 0h2m3 0h1m2 0h1m-32 1h3m2 0h3m1 0h1m5 0h1m1 0h1m3 0h1m5 0h2m2 0h3m1 0h2m-37 1h1m3 0h1m3 0h5m1 0h5m2 0h2m3 0h1m1 0h5m2 0h2m-37 1h3m3 0h3m1 0h1m5 0h1m4 0h1m1 0h5m1 0h2m1 0h1m1 0h1m-35 1h2m3 0h1m1 0h4m1 0h4m2 0h1m1 0h1m1 0h2m1 0h1m2 0h1m2 0h1m2 0h2m-36 1h1m2 0h1m2 0h1m3 0h1m3 0h3m2 0h1m2 0h1m1 0h1m1 0h4m2 0h1m2 0h2m-36 1h4m4 0h1m5 0h1m2 0h6m4 0h1m1 0h3m3 0h1m-33 1h4m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m2 0h2m1 0h3m-35 1h1m2 0h3m2 0h1m2 0h1m2 0h1m1 0h1m1 0h3m1 0h2m4 0h1m4 0h1m-34 1h1m1 0h5m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m1 0h2m-37 1h2m2 0h2m3 0h7m7 0h1m4 0h1m1 0h3m2 0h1m-35 1h1m1 0h2m1 0h1m7 0h1m3 0h1m1 0h7m2 0h2m1 0h1m1 0h2m-36 1h2m5 0h2m3 0h1m2 0h2m4 0h1m1 0h1m2 0h1m1 0h1m4 0h1m-34 1h1m2 0h1m1 0h2m2 0h5m6 0h1m5 0h2m2 0h2m2 0h3m-37 1h1m1 0h1m1 0h1m3 0h1m1 0h1m2 0h1m2 0h1m4 0h1m2 0h1m1 0h7m-33 1h1m1 0h1m3 0h3m2 0h1m1 0h1m3 0h1m4 0h1m1 0h2m2 0h7m1 0h1m-29 1h1m1 0h2m1 0h2m1 0h2m1 0h3m1 0h1m1 0h1m1 0h2m3 0h2m1 0h1m-36 1h7m6 0h1m1 0h3m2 0h2m6 0h1m1 0h1m1 0h1m1 0h1m1 0h1m-37 1h1m5 0h1m1 0h1m1 0h1m3 0h2m1 0h8m1 0h3m3 0h2m1 0h1m-36 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m2 0h9m1 0h1m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m2 0h1m1 0h4m1 0h2m2 0h2m1 0h1m1 0h1m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h4m2 0h1m1 0h2m2 0h5m4 0h3m-37 1h1m5 0h1m2 0h1m2 0h4m2 0h7m2 0h2m1 0h1m1 0h1m3 0h1m-37 1h7m1 0h1m1 0h4m1 0h1m1 0h1m1 0h1m4 0h3m2 0h2m1 0h5"/></svg><span id="scan"></span></div>
+    <div class="ctarow">
+      <a class="play" data-play target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#2DB55D" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#FBBC04" d="m17.3 8.5-3.5 3.5 3.5 3.5 4-2.3c.9-.5.9-1.9 0-2.4z"/><path fill="#4285F4" d="M3.6 1.8c.3-.1.7-.1 1.1.1l12.6 6.6-3.5 3.5z"/><path fill="#EA4335" d="m13.8 12 3.5 3.5-12.6 6.6c-.4.2-.8.2-1.1.1z"/></svg>
+        <span data-t="cta"></span>
+      </a>
+    </div>
+    <ul class="chips" id="chips"></ul>
+    <div class="qrbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41" width="112" height="112" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h41v41h-41z"/><path class="qrline" stroke="#1c1c1e" d="M2 2.5h7m2 0h2m1 0h3m1 0h1m1 0h1m1 0h2m2 0h2m2 0h1m1 0h7m-37 1h1m5 0h1m2 0h4m4 0h3m4 0h4m2 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m5 0h2m2 0h4m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h11m1 0h1m2 0h2m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h1m2 0h1m2 0h3m1 0h2m4 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h2m1 0h1m1 0h1m2 0h1m1 0h1m3 0h1m2 0h1m1 0h2m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h4m1 0h2m8 0h1m4 0h1m-29 1h1m1 0h5m4 0h1m1 0h1m1 0h1m2 0h1m1 0h7m3 0h5m-34 1h2m1 0h1m2 0h3m1 0h1m1 0h5m3 0h1m2 0h1m6 0h1m3 0h1m-35 1h1m2 0h4m1 0h2m3 0h1m2 0h1m2 0h3m2 0h3m2 0h4m1 0h2m-34 1h1m3 0h2m5 0h1m1 0h1m4 0h1m4 0h1m1 0h1m1 0h2m1 0h1m2 0h1m-32 1h3m4 0h2m2 0h2m2 0h1m1 0h1m1 0h3m2 0h4m1 0h3m-37 1h4m1 0h1m1 0h2m3 0h3m1 0h6m1 0h2m3 0h1m2 0h1m-32 1h3m2 0h3m1 0h1m5 0h1m1 0h1m3 0h1m5 0h2m2 0h3m1 0h2m-37 1h1m3 0h1m3 0h5m1 0h5m2 0h2m3 0h1m1 0h5m2 0h2m-37 1h3m3 0h3m1 0h1m5 0h1m4 0h1m1 0h5m1 0h2m1 0h1m1 0h1m-35 1h2m3 0h1m1 0h4m1 0h4m2 0h1m1 0h1m1 0h2m1 0h1m2 0h1m2 0h1m2 0h2m-36 1h1m2 0h1m2 0h1m3 0h1m3 0h3m2 0h1m2 0h1m1 0h1m1 0h4m2 0h1m2 0h2m-36 1h4m4 0h1m5 0h1m2 0h6m4 0h1m1 0h3m3 0h1m-33 1h4m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m2 0h2m1 0h3m-35 1h1m2 0h3m2 0h1m2 0h1m2 0h1m1 0h1m1 0h3m1 0h2m4 0h1m4 0h1m-34 1h1m1 0h5m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m1 0h2m-37 1h2m2 0h2m3 0h7m7 0h1m4 0h1m1 0h3m2 0h1m-35 1h1m1 0h2m1 0h1m7 0h1m3 0h1m1 0h7m2 0h2m1 0h1m1 0h2m-36 1h2m5 0h2m3 0h1m2 0h2m4 0h1m1 0h1m2 0h1m1 0h1m4 0h1m-34 1h1m2 0h1m1 0h2m2 0h5m6 0h1m5 0h2m2 0h2m2 0h3m-37 1h1m1 0h1m1 0h1m3 0h1m1 0h1m2 0h1m2 0h1m4 0h1m2 0h1m1 0h7m-33 1h1m1 0h1m3 0h3m2 0h1m1 0h1m3 0h1m4 0h1m1 0h2m2 0h7m1 0h1m-29 1h1m1 0h2m1 0h2m1 0h2m1 0h3m1 0h1m1 0h1m1 0h2m3 0h2m1 0h1m-36 1h7m6 0h1m1 0h3m2 0h2m6 0h1m1 0h1m1 0h1m1 0h1m1 0h1m-37 1h1m5 0h1m1 0h1m1 0h1m3 0h2m1 0h8m1 0h3m3 0h2m1 0h1m-36 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m2 0h9m1 0h1m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m2 0h1m1 0h4m1 0h2m2 0h2m1 0h1m1 0h1m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h4m2 0h1m1 0h2m2 0h5m4 0h3m-37 1h1m5 0h1m2 0h1m2 0h4m2 0h7m2 0h2m1 0h1m1 0h1m3 0h1m-37 1h7m1 0h1m1 0h4m1 0h1m1 0h1m1 0h1m4 0h3m2 0h2m1 0h5"/></svg><span id="scan"></span></div>
   </div>
-  <img class="phone" id="heroimg" alt="BabySafe screenshot" width="320" height="569">
-</div>
-</div>
+  <div class="stage">
+    <img class="ph" id="heroimg" alt="BabySafe app screen" width="336" height="648">
+    <div class="float f1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span id="fl1"></span></div>
+    <div class="float f2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span id="fl2"></span></div>
+  </div>
+</div></div>
 
-<section><div class="wrap">
-  <h2 data-t="how"></h2>
+<section class="why"><div class="wrap">
+  <div class="rv"><p class="kicker" data-x="whyK"></p><div class="big">1,000+</div></div>
+  <div class="rv">
+    <h2 data-x="whyT"></h2>
+    <p class="s1" data-x="why1"></p>
+    <p data-x="why2"></p>
+    <p class="src"><a href="https://www.nhtsa.gov/child-safety/heatstroke-kills" target="_blank" rel="noopener" data-x="src"></a></p>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="head rv"><p class="kicker" data-t="how"></p><h2 data-t="sub"></h2></div>
   <div class="steps" id="steps"></div>
+  <div class="gallery rv" id="gallery"></div>
 </div></section>
 
-<section><div class="wrap">
-  <div class="gallery" id="gallery"></div>
+<section id="video" style="padding-top:0"><div class="wrap center">
+  <div class="head rv"><p class="kicker" data-t="video"></p><h2 data-x="final"></h2></div>
+  <div class="vbox rv"><video id="vid" controls playsinline preload="metadata"></video></div>
 </div></section>
 
-<section><div class="wrap">
-  <h2 data-t="video"></h2>
-  <div class="video"><video id="vid" controls playsinline preload="metadata"></video></div>
+<section id="faq" class="faq" style="padding-top:0"><div class="wrap">
+  <div class="rv"><h2 data-t="faq"></h2><p class="lead" data-t="free"></p></div>
+  <div class="rv">
+    <details open><summary data-t="q1"></summary><p data-t="a1"></p></details>
+    <details><summary data-t="q2"></summary><p data-t="a2"></p></details>
+    <details><summary data-t="q3"></summary><p data-t="a3"></p></details>
+    <div class="note" data-t="note"></div>
+  </div>
 </div></section>
 
-<section><div class="wrap">
-  <h2 data-t="faq"></h2>
-  <details><summary data-t="q1"></summary><p data-t="a1"></p></details>
-  <details><summary data-t="q2"></summary><p data-t="a2"></p></details>
-  <details><summary data-t="q3"></summary><p data-t="a3"></p></details>
-  <div class="note" data-t="note"></div>
+<section style="padding-top:0"><div class="wrap">
+  <a class="guide rv guide-link" href="guides/en.html">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></span>
+    <span><small data-x="gk"></small><b id="gtitle"></b></span>
+    <span class="go"><span data-x="read"></span> <span class="ar">→</span></span>
+  </a>
 </div></section>
 
-<section class="cta2"><div class="wrap">
-  <a class="play" data-play target="_blank" rel="noopener"><span data-t="cta"></span></a>
-</div></section>
+<div class="final"><div class="wrap"><div class="box rv">
+  <img src="img/icon.png" alt="" width="72" height="72">
+  <h2 data-x="final"></h2>
+  <a class="play" data-play target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#2DB55D" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#FBBC04" d="m17.3 8.5-3.5 3.5 3.5 3.5 4-2.3c.9-.5.9-1.9 0-2.4z"/><path fill="#4285F4" d="M3.6 1.8c.3-.1.7-.1 1.1.1l12.6 6.6-3.5 3.5z"/><path fill="#EA4335" d="m13.8 12 3.5 3.5-12.6 6.6c-.4.2-.8.2-1.1.1z"/></svg><span data-t="cta"></span></a>
+</div></div></div>
 
-<div class="wrap">
-<footer>
-  <span>© 2026 BabySafe · Gil Alon</span>
+<footer><div class="wrap">
+  <a class="brand" href="#"><img src="img/icon.png" alt="" width="26" height="26"><span><span class="b1">Baby</span><span class="b2">Safe</span></span></a>
+  <span>© 2026 Gil Alon</span>
   <a href="https://sites.google.com/view/babysafeprivacy" target="_blank" rel="noopener" data-t="privacy"></a>
-  <a id="guide" href="guides/en.html"></a>
-</footer>
-</div>
+  <a class="guide-link" href="guides/en.html" id="guide"></a>
+  <a class="sp" data-play target="_blank" rel="noopener">Google Play</a>
+</div></footer>
 
 <script>
 const T={"en": {"cta": "Get it on Google Play", "free": "Free · No ads · No sign-up", "how": "How it works", "video": "See it in action", "faq": "Questions", "q1": "Does it drain the battery?", "a1": "No. It simply waits for your phone to connect to the car's Bluetooth, which uses almost no battery.", "q2": "Does it need internet or an account?", "a2": "No. It works on the phone itself – no internet, no sign-up.", "q3": "Is there an iPhone version?", "a3": "Not yet. BabySafe is currently available for Android phones.", "note": "BabySafe is a reminder tool. It does not replace a parent's attention.", "privacy": "Privacy policy", "dir": "ltr", "h1": "Never forget a child<br>in the car", "sub": "Automatic alert the moment you leave the car", "steps": [["One tap to turn it on", "Then it works by itself, in the background"], ["Knows when you drive", "Connects to your car’s Bluetooth automatically"], ["Alert when you leave the car", "Voice, vibration and flashlight – even on a locked screen"]]}, "he": {"cta": "להורדה מ-Google Play", "free": "חינם · בלי פרסומות · בלי הרשמה", "how": "איך זה עובד", "video": "רואים את זה בפעולה", "faq": "שאלות", "q1": "האם היא מרוקנת את הסוללה?", "a1": "לא. היא רק מחכה שהטלפון יתחבר לבלוטוס של הרכב, וזה כמעט לא צורך סוללה.", "q2": "צריך אינטרנט או חשבון?", "a2": "לא. הכול עובד בטלפון עצמו – בלי אינטרנט ובלי הרשמה.", "q3": "יש גרסה לאייפון?", "a3": "עדיין לא. כרגע BabySafe זמינה לטלפוני אנדרואיד.", "note": "BabySafe היא כלי תזכורת. היא לא מחליפה את תשומת הלב של ההורה.", "privacy": "מדיניות פרטיות", "dir": "rtl", "h1": "לעולם לא לשכוח<br>ילד ברכב", "sub": "התראה אוטומטית ברגע שיוצאים מהרכב", "steps": [["לחיצה אחת להפעלה", "ומשם היא עובדת לבד, ברקע"], ["יודעת מתי נוסעים", "מתחברת אוטומטית לבלוטוס של הרכב"], ["התראה כשיוצאים מהרכב", "קול, רטט ופנס – גם כשהמסך נעול"]]}, "ar": {"cta": "احصل عليه من Google Play", "free": "مجاني · بلا إعلانات · بلا تسجيل", "how": "كيف يعمل", "video": "شاهده أثناء العمل", "faq": "أسئلة", "q1": "هل يستنزف البطارية؟", "a1": "لا. ينتظر فقط اتصال الهاتف ببلوتوث السيارة، وهذا لا يستهلك تقريباً أي بطارية.", "q2": "هل يحتاج إلى إنترنت أو حساب؟", "a2": "لا. يعمل على الهاتف نفسه – بلا إنترنت وبلا تسجيل.", "q3": "هل توجد نسخة للآيفون؟", "a3": "ليس بعد. BabySafe متاح حالياً لهواتف أندرويد.", "note": "BabySafe أداة تذكير، ولا يغني عن انتباه الوالدين.", "privacy": "سياسة الخصوصية", "dir": "rtl", "h1": "لا تنسَ طفلاً<br>في السيارة أبداً", "sub": "تنبيه تلقائي لحظة مغادرة السيارة", "steps": [["لمسة واحدة للتشغيل", "ثم يعمل تلقائياً في الخلفية"], ["يعرف متى تقود", "يتصل ببلوتوث سيارتك تلقائياً"], ["تنبيه عند مغادرة السيارة", "صوت واهتزاز وضوء – حتى والشاشة مقفلة"]]}, "ru": {"cta": "Скачать в Google Play", "free": "Бесплатно · Без рекламы · Без регистрации", "how": "Как это работает", "video": "Посмотрите в действии", "faq": "Вопросы", "q1": "Сильно ли садится батарея?", "a1": "Нет. Приложение просто ждёт подключения к Bluetooth автомобиля – это почти не расходует заряд.", "q2": "Нужен ли интернет или аккаунт?", "a2": "Нет. Всё работает прямо на телефоне – без интернета и регистрации.", "q3": "Есть ли версия для iPhone?", "a3": "Пока нет. Сейчас BabySafe доступно для Android.", "note": "BabySafe – это напоминание. Оно не заменяет внимание родителей.", "privacy": "Политика конфиденциальности", "dir": "ltr", "h1": "Никогда не забудьте<br>ребёнка в машине", "sub": "Автоматическое оповещение, как только вы выходите", "steps": [["Включается одним касанием", "Дальше работает сам, в фоне"], ["Знает, когда вы за рулём", "Сам подключается к Bluetooth автомобиля"], ["Сигнал, когда вы выходите", "Голос, вибрация и фонарик – даже на заблокированном экране"]]}, "uk": {"cta": "Завантажити з Google Play", "free": "Безкоштовно · Без реклами · Без реєстрації", "how": "Як це працює", "video": "Подивіться в дії", "faq": "Запитання", "q1": "Чи сильно розряджає батарею?", "a1": "Ні. Застосунок лише чекає підключення до Bluetooth авто – це майже не витрачає заряд.", "q2": "Чи потрібен інтернет або акаунт?", "a2": "Ні. Усе працює на самому телефоні – без інтернету й реєстрації.", "q3": "Чи є версія для iPhone?", "a3": "Поки ні. Наразі BabySafe доступний для Android.", "note": "BabySafe – це нагадування. Воно не замінює уваги батьків.", "privacy": "Політика конфіденційності", "dir": "ltr", "h1": "Ніколи не забудьте<br>дитину в авто", "sub": "Автоматичне сповіщення, щойно ви виходите", "steps": [["Вмикається одним дотиком", "Далі працює сам, у фоні"], ["Знає, коли ви за кермом", "Сам підключається до Bluetooth авто"], ["Сигнал, коли ви виходите", "Голос, вібрація й ліхтарик – навіть на заблокованому екрані"]]}, "es": {"cta": "Disponible en Google Play", "free": "Gratis · Sin anuncios · Sin registro", "how": "Cómo funciona", "video": "Míralo en acción", "faq": "Preguntas", "q1": "¿Gasta mucha batería?", "a1": "No. Solo espera a que el teléfono se conecte al Bluetooth del vehículo, lo que casi no consume batería.", "q2": "¿Necesita internet o una cuenta?", "a2": "No. Funciona en el propio teléfono, sin internet y sin registro.", "q3": "¿Hay versión para iPhone?", "a3": "Todavía no. Por ahora BabySafe está disponible para Android.", "note": "BabySafe es una herramienta de recordatorio. No sustituye la atención de los padres.", "privacy": "Política de privacidad", "dir": "ltr", "h1": "Nunca olvides a un niño<br>en el vehículo", "sub": "Alerta automática en cuanto sales del vehículo", "steps": [["Un toque para activarla", "Después funciona sola, en segundo plano"], ["Sabe cuándo conduces", "Se conecta sola al Bluetooth de tu vehículo"], ["Alerta al salir del vehículo", "Voz, vibración y linterna, incluso con la pantalla bloqueada"]]}, "pt": {"cta": "Disponível no Google Play", "free": "Grátis · Sem anúncios · Sem cadastro", "how": "Como funciona", "video": "Veja em ação", "faq": "Perguntas", "q1": "Gasta muita bateria?", "a1": "Não. Ele só espera o celular se conectar ao Bluetooth do carro, o que quase não gasta bateria.", "q2": "Precisa de internet ou conta?", "a2": "Não. Funciona no próprio celular, sem internet e sem cadastro.", "q3": "Existe versão para iPhone?", "a3": "Ainda não. Por enquanto o BabySafe está disponível para Android.", "note": "O BabySafe é uma ferramenta de lembrete. Não substitui a atenção dos pais.", "privacy": "Política de privacidade", "dir": "ltr", "h1": "Nunca esqueça uma<br>criança no carro", "sub": "Alerta automático assim que sai do carro", "steps": [["Um toque para ativar", "Depois funciona sozinho, em segundo plano"], ["Sabe quando está ao volante", "Conecta-se automaticamente ao Bluetooth do carro"], ["Alerta ao sair do carro", "Voz, vibração e lanterna, mesmo com o aparelho bloqueado"]]}, "fr": {"cta": "Disponible sur Google Play", "free": "Gratuit · Sans pub · Sans inscription", "how": "Comment ça marche", "video": "Voir en action", "faq": "Questions", "q1": "Est-ce que ça vide la batterie ?", "a1": "Non. L’appli attend simplement que le téléphone se connecte au Bluetooth de la voiture, ce qui ne consomme presque rien.", "q2": "Faut-il Internet ou un compte ?", "a2": "Non. Tout fonctionne sur le téléphone, sans Internet ni inscription.", "q3": "Existe-t-il une version iPhone ?", "a3": "Pas encore. BabySafe est actuellement disponible sur Android.", "note": "BabySafe est un outil de rappel. Il ne remplace pas la vigilance des parents.", "privacy": "Politique de confidentialité", "dir": "ltr", "h1": "N’oubliez jamais un enfant<br>dans la voiture", "sub": "Alerte automatique dès que vous quittez la voiture", "steps": [["Une touche pour l’activer", "Ensuite, elle fonctionne seule, en arrière-plan"], ["Sait quand vous conduisez", "Se connecte automatiquement au Bluetooth de la voiture"], ["Alerte quand vous sortez", "Voix, vibration et lampe torche, même écran verrouillé"]]}, "de": {"cta": "Jetzt bei Google Play", "free": "Kostenlos · Keine Werbung · Keine Anmeldung", "how": "So funktioniert’s", "video": "In Aktion ansehen", "faq": "Fragen", "q1": "Verbraucht die App viel Akku?", "a1": "Nein. Sie wartet nur darauf, dass sich das Handy mit dem Auto-Bluetooth verbindet – das kostet kaum Akku.", "q2": "Brauche ich Internet oder ein Konto?", "a2": "Nein. Alles läuft auf dem Handy selbst – ohne Internet und ohne Anmeldung.", "q3": "Gibt es eine iPhone-Version?", "a3": "Noch nicht. BabySafe ist derzeit für Android verfügbar.", "note": "BabySafe ist eine Erinnerungshilfe und ersetzt nicht die Aufmerksamkeit der Eltern.", "privacy": "Datenschutzerklärung", "dir": "ltr", "h1": "Nie wieder ein Kind<br>im Auto vergessen", "sub": "Automatischer Alarm, sobald du aussteigst", "steps": [["Ein Tipp zum Einschalten", "Dann läuft sie von allein im Hintergrund"], ["Erkennt, wenn du fährst", "Verbindet sich automatisch mit dem Auto-Bluetooth"], ["Alarm beim Aussteigen", "Sprache, Vibration und Taschenlampe – auch bei gesperrtem Bildschirm"]]}, "it": {"cta": "Disponibile su Google Play", "free": "Gratis · Senza pubblicità · Senza registrazione", "how": "Come funziona", "video": "Guardala in azione", "faq": "Domande", "q1": "Consuma molta batteria?", "a1": "No. Aspetta solo che il telefono si colleghi al Bluetooth dell’auto, e questo non consuma quasi nulla.", "q2": "Servono internet o un account?", "a2": "No. Funziona direttamente sul telefono, senza internet e senza registrazione.", "q3": "Esiste una versione per iPhone?", "a3": "Non ancora. Per ora BabySafe è disponibile per Android.", "note": "BabySafe è uno strumento di promemoria. Non sostituisce l’attenzione dei genitori.", "privacy": "Informativa sulla privacy", "dir": "ltr", "h1": "Mai più un bambino<br>dimenticato in auto", "sub": "Avviso automatico appena scendi dall’auto", "steps": [["Un tocco per attivarla", "Poi funziona da sola, in background"], ["Sa quando guidi", "Si collega da sola al Bluetooth dell’auto"], ["Avviso quando scendi dall’auto", "Voce, vibrazione e torcia, anche a schermo bloccato"]]}, "tr": {"cta": "Google Play’den indirin", "free": "Ücretsiz · Reklamsız · Kayıt gerekmez", "how": "Nasıl çalışır", "video": "Uygulamayı izleyin", "faq": "Sorular", "q1": "Pili çok tüketir mi?", "a1": "Hayır. Yalnızca telefonun aracın Bluetooth’una bağlanmasını bekler; bu neredeyse hiç pil harcamaz.", "q2": "İnternet veya hesap gerekir mi?", "a2": "Hayır. Her şey telefonun kendisinde çalışır – internet ve kayıt gerekmez.", "q3": "iPhone sürümü var mı?", "a3": "Henüz yok. BabySafe şu anda Android için mevcut.", "note": "BabySafe bir hatırlatma aracıdır. Ebeveyn dikkatinin yerini tutmaz.", "privacy": "Gizlilik politikası", "dir": "ltr", "h1": "Araçta asla<br>çocuk unutmayın", "sub": "Araçtan indiğiniz anda otomatik uyarı", "steps": [["Tek dokunuşla açın", "Sonra arka planda kendi kendine çalışır"], ["Ne zaman sürdüğünüzü bilir", "Aracın Bluetooth’una otomatik bağlanır"], ["Araçtan inince uyarı", "Ses, titreşim ve fener – ekran kilitliyken bile"]]}, "hi": {"cta": "Google Play पर पाएँ", "free": "मुफ़्त · कोई विज्ञापन नहीं · कोई साइन-अप नहीं", "how": "यह कैसे काम करता है", "video": "इसे काम करते देखें", "faq": "सवाल", "q1": "क्या यह बैटरी ज़्यादा खाता है?", "a1": "नहीं। यह बस फ़ोन के कार के ब्लूटूथ से जुड़ने का इंतज़ार करता है, जिसमें लगभग कोई बैटरी नहीं लगती।", "q2": "क्या इंटरनेट या अकाउंट चाहिए?", "a2": "नहीं। सब कुछ फ़ोन पर ही चलता है – बिना इंटरनेट, बिना साइन-अप।", "q3": "क्या iPhone वर्ज़न है?", "a3": "अभी नहीं। फ़िलहाल BabySafe Android फ़ोन के लिए उपलब्ध है।", "note": "BabySafe एक रिमाइंडर टूल है। यह माता-पिता के ध्यान की जगह नहीं लेता।", "privacy": "गोपनीयता नीति", "dir": "ltr", "h1": "कार में बच्चे को<br>कभी न भूलें", "sub": "कार से उतरते ही अपने-आप अलर्ट", "steps": [["एक टैप में चालू", "फिर यह बैकग्राउंड में खुद काम करता है"], ["जानता है कब आप गाड़ी चला रहे हैं", "कार के ब्लूटूथ से अपने-आप जुड़ता है"], ["कार से उतरते ही अलर्ट", "आवाज़, वाइब्रेशन और फ़्लैशलाइट – लॉक स्क्रीन पर भी"]]}, "zh": {"cta": "在 Google Play 下载", "free": "免费 · 无广告 · 无需注册", "how": "如何使用", "video": "观看演示", "faq": "常见问题", "q1": "会很耗电吗？", "a1": "不会。它只是等待手机连接车载蓝牙，几乎不耗电。", "q2": "需要网络或账号吗？", "a2": "不需要。一切都在手机上运行，无需网络，无需注册。", "q3": "有 iPhone 版吗？", "a3": "暂时没有。BabySafe 目前适用于安卓手机。", "note": "BabySafe 是一款提醒工具，不能代替家长的注意。", "privacy": "隐私政策", "dir": "ltr", "h1": "永远不要把孩子<br>遗忘在车里", "sub": "下车那一刻 自动提醒", "steps": [["一键开启", "之后在后台自动运行"], ["知道你何时开车", "自动连接车载蓝牙"], ["下车时提醒", "语音、振动和闪光灯，锁屏时也有效"]]}, "zht": {"cta": "在 Google Play 下載", "free": "免費 · 無廣告 · 免註冊", "how": "如何運作", "video": "觀看示範", "faq": "常見問題", "q1": "會很耗電嗎？", "a1": "不會。它只是等待手機連接車用藍牙，幾乎不耗電。", "q2": "需要網路或帳號嗎？", "a2": "不需要。一切都在手機上運作，不需網路，也不用註冊。", "q3": "有 iPhone 版嗎？", "a3": "目前還沒有。BabySafe 現在適用於 Android 手機。", "note": "BabySafe 是提醒工具，無法取代家長的注意。", "privacy": "隱私權政策", "dir": "ltr", "h1": "絕不把孩子<br>遺忘在車內", "sub": "下車那一刻 自動提醒", "steps": [["一鍵開啟", "之後在背景自動運作"], ["知道你何時開車", "自動連接車用藍牙"], ["下車時提醒", "語音、震動和手電筒，鎖定螢幕時也有效"]]}, "ja": {"cta": "Google Play で手に入れよう", "free": "無料 · 広告なし · 登録不要", "how": "使い方", "video": "動画で見る", "faq": "よくある質問", "q1": "バッテリーを消耗しますか？", "a1": "いいえ。スマホが車のBluetoothにつながるのを待つだけなので、ほとんど電池を使いません。", "q2": "ネット接続やアカウントは必要？", "a2": "不要です。すべてスマホ上で動作し、ネット接続も登録もいりません。", "q3": "iPhone版はありますか？", "a3": "まだありません。現在BabySafeはAndroid版のみです。", "note": "BabySafeはリマインダーです。保護者の注意の代わりにはなりません。", "privacy": "プライバシーポリシー", "dir": "ltr", "h1": "車内に子どもを<br>置き忘れない", "sub": "車を降りた瞬間に 自動でお知らせ", "steps": [["ワンタップでオン", "あとはバックグラウンドで自動で動作"], ["運転中を自動で認識", "車のBluetoothに自動で接続"], ["降車時にアラート", "音声・振動・ライトで通知（ロック画面でも）"]]}, "ko": {"cta": "Google Play에서 받기", "free": "무료 · 광고 없음 · 가입 불필요", "how": "작동 방식", "video": "영상으로 보기", "faq": "자주 묻는 질문", "q1": "배터리를 많이 쓰나요?", "a1": "아니요. 휴대폰이 차량 블루투스에 연결되기만 기다리기 때문에 배터리를 거의 쓰지 않아요.", "q2": "인터넷이나 계정이 필요한가요?", "a2": "아니요. 모든 기능이 휴대폰에서 작동하며 인터넷도 가입도 필요 없어요.", "q3": "아이폰 버전이 있나요?", "a3": "아직 없어요. 현재 BabySafe는 안드로이드용입니다.", "note": "BabySafe는 알림 도구이며 보호자의 주의를 대신하지 않습니다.", "privacy": "개인정보처리방침", "dir": "ltr", "h1": "차 안에 아이를<br>절대 두고 내리지 마세요", "sub": "차에서 내리는 순간 자동 알림", "steps": [["한 번 탭으로 켜기", "이후엔 백그라운드에서 알아서 작동"], ["운전 중임을 알아요", "차량 블루투스에 자동 연결"], ["차에서 내리면 알림", "음성, 진동, 손전등 – 잠금 화면에서도"]]}, "id": {"cta": "Dapatkan di Google Play", "free": "Gratis · Tanpa iklan · Tanpa daftar", "how": "Cara kerjanya", "video": "Lihat cara kerjanya", "faq": "Pertanyaan", "q1": "Apakah boros baterai?", "a1": "Tidak. Aplikasi hanya menunggu ponsel terhubung ke Bluetooth mobil, dan itu hampir tidak memakai baterai.", "q2": "Perlu internet atau akun?", "a2": "Tidak. Semuanya berjalan di ponsel – tanpa internet, tanpa daftar.", "q3": "Ada versi iPhone?", "a3": "Belum. Saat ini BabySafe tersedia untuk Android.", "note": "BabySafe adalah alat pengingat. Tidak menggantikan perhatian orang tua.", "privacy": "Kebijakan privasi", "dir": "ltr", "h1": "Jangan pernah lupakan<br>anak di mobil", "sub": "Peringatan otomatis saat Anda turun dari mobil", "steps": [["Sekali ketuk untuk aktif", "Lalu bekerja sendiri di latar belakang"], ["Tahu saat Anda menyetir", "Terhubung otomatis ke Bluetooth mobil"], ["Peringatan saat turun dari mobil", "Suara, getar, dan senter – bahkan saat layar terkunci"]]}, "vi": {"cta": "Tải trên Google Play", "free": "Miễn phí · Không quảng cáo · Không cần đăng ký", "how": "Cách hoạt động", "video": "Xem cách hoạt động", "faq": "Câu hỏi", "q1": "Ứng dụng có tốn pin không?", "a1": "Không. Ứng dụng chỉ chờ điện thoại kết nối Bluetooth trên xe, gần như không tốn pin.", "q2": "Có cần internet hay tài khoản không?", "a2": "Không. Mọi thứ chạy ngay trên điện thoại – không cần internet, không cần đăng ký.", "q3": "Có bản cho iPhone không?", "a3": "Chưa có. Hiện BabySafe dành cho điện thoại Android.", "note": "BabySafe là công cụ nhắc nhở, không thay thế sự chú ý của cha mẹ.", "privacy": "Chính sách quyền riêng tư", "dir": "ltr", "h1": "Không bao giờ quên<br>trẻ trong xe", "sub": "Cảnh báo tự động ngay khi bạn rời xe", "steps": [["Bật chỉ với một chạm", "Sau đó tự hoạt động ở chế độ nền"], ["Biết khi bạn lái xe", "Tự kết nối với Bluetooth trên xe"], ["Cảnh báo khi rời xe", "Giọng nói, rung và đèn pin – kể cả khi khóa màn hình"]]}, "pl": {"cta": "Pobierz z Google Play", "free": "Za darmo · Bez reklam · Bez rejestracji", "how": "Jak to działa", "video": "Zobacz w akcji", "faq": "Pytania", "q1": "Czy rozładowuje baterię?", "a1": "Nie. Aplikacja tylko czeka, aż telefon połączy się z Bluetooth samochodu – to prawie nie zużywa baterii.", "q2": "Czy potrzebny jest internet lub konto?", "a2": "Nie. Wszystko działa w telefonie – bez internetu i bez rejestracji.", "q3": "Czy jest wersja na iPhone’a?", "a3": "Jeszcze nie. Obecnie BabySafe jest dostępna na Androida.", "note": "BabySafe to narzędzie przypominające. Nie zastępuje uwagi rodzica.", "privacy": "Polityka prywatności", "dir": "ltr", "h1": "Nigdy nie zapomnij<br>dziecka w aucie", "sub": "Automatyczny alarm, gdy tylko wysiadasz", "steps": [["Włączasz jednym dotknięciem", "Potem działa sama, w tle"], ["Wie, kiedy prowadzisz", "Sama łączy się z Bluetooth samochodu"], ["Alarm, gdy wysiadasz", "Głos, wibracje i latarka – nawet przy zablokowanym ekranie"]]}, "nl": {"cta": "Ontdek het op Google Play", "free": "Gratis · Geen advertenties · Geen account", "how": "Zo werkt het", "video": "Bekijk het in actie", "faq": "Vragen", "q1": "Kost het veel batterij?", "a1": "Nee. De app wacht alleen tot je telefoon verbinding maakt met de Bluetooth van de auto – dat kost bijna geen batterij.", "q2": "Heb ik internet of een account nodig?", "a2": "Nee. Alles werkt op de telefoon zelf – zonder internet en zonder account.", "q3": "Is er een iPhone-versie?", "a3": "Nog niet. BabySafe is nu beschikbaar voor Android.", "note": "BabySafe is een herinneringshulp en vervangt de aandacht van ouders niet.", "privacy": "Privacybeleid", "dir": "ltr", "h1": "Vergeet nooit een kind<br>in de auto", "sub": "Automatisch alarm zodra je uitstapt", "steps": [["Met één tik aan", "Daarna werkt hij vanzelf op de achtergrond"], ["Weet wanneer je rijdt", "Verbindt automatisch met de Bluetooth van je auto"], ["Alarm als je uitstapt", "Stem, trilling en zaklamp – ook op een vergrendeld scherm"]]}};
+const X={"en": {"badges": ["Free forever", "No ads", "No sign-up", "Works offline"], "whyK": "Why it matters", "whyT": "It can happen to any loving parent", "why1": "More than 1,000 children in the U.S. have died in hot cars since 1998.", "why2": "In more than half of the cases, a caring parent simply forgot – a change in routine, fatigue, a child asleep in the back.", "src": "Sources: NHTSA, National Safety Council", "final": "One tap. Peace of mind on every drive.", "gk": "Free guide for parents", "read": "Read the guide"}, "he": {"badges": ["חינם לתמיד", "בלי פרסומות", "בלי הרשמה", "עובדת בלי אינטרנט"], "whyK": "למה זה חשוב", "whyT": "זה יכול לקרות לכל הורה אוהב", "why1": "בארה״ב לבדה מתו מאז 1998 יותר מ־1,000 ילדים שנשכחו ברכב חם.", "why2": "ביותר ממחצית המקרים הורה אכפתי פשוט שכח – שינוי בשגרה, עייפות, ילד שנרדם מאחור.", "src": "מקורות: NHTSA, National Safety Council", "final": "לחיצה אחת. שקט נפשי בכל נסיעה.", "gk": "מדריך חינם להורים", "read": "לקריאת המדריך"}, "ar": {"badges": ["مجاني دائماً", "بلا إعلانات", "بلا تسجيل", "يعمل دون إنترنت"], "whyK": "لماذا هذا مهم", "whyT": "قد يحدث لأي والد محب", "why1": "منذ عام 1998 توفي أكثر من 1,000 طفل في الولايات المتحدة داخل سيارات حارة.", "why2": "في أكثر من نصف الحالات نسي والد محب طفله ببساطة – تغيير في الروتين، تعب، طفل نائم في الخلف.", "src": "المصادر: NHTSA، National Safety Council", "final": "لمسة واحدة. راحة بال في كل رحلة.", "gk": "دليل مجاني للوالدين", "read": "اقرأ الدليل"}, "ru": {"badges": ["Бесплатно навсегда", "Без рекламы", "Без регистрации", "Работает без интернета"], "whyK": "Почему это важно", "whyT": "Это может случиться с любым любящим родителем", "why1": "С 1998 года только в США более 1000 детей погибли, оставшись в раскалённой машине.", "why2": "Более чем в половине случаев заботливый родитель просто забыл – смена распорядка, усталость, ребёнок уснул на заднем сиденье.", "src": "Источники: NHTSA, National Safety Council", "final": "Одно касание. Спокойствие в каждой поездке.", "gk": "Бесплатное руководство для родителей", "read": "Читать руководство"}, "uk": {"badges": ["Безкоштовно назавжди", "Без реклами", "Без реєстрації", "Працює без інтернету"], "whyK": "Чому це важливо", "whyT": "Це може статися з будь-якими люблячими батьками", "why1": "Від 1998 року лише в США понад 1000 дітей загинули, залишившись у розпеченому авто.", "why2": "У більш ніж половині випадків турботливі батьки просто забули – зміна розпорядку, втома, дитина заснула позаду.", "src": "Джерела: NHTSA, National Safety Council", "final": "Один дотик. Спокій у кожній поїздці.", "gk": "Безкоштовний посібник для батьків", "read": "Читати посібник"}, "es": {"badges": ["Gratis para siempre", "Sin anuncios", "Sin registro", "Funciona sin internet"], "whyK": "Por qué importa", "whyT": "Le puede pasar a cualquier padre o madre", "why1": "Desde 1998, más de 1.000 niños han muerto en EE. UU. tras quedar en un vehículo caluroso.", "why2": "En más de la mitad de los casos, un padre atento simplemente se olvidó: un cambio de rutina, cansancio, un niño dormido atrás.", "src": "Fuentes: NHTSA, National Safety Council", "final": "Un toque. Tranquilidad en cada viaje.", "gk": "Guía gratuita para padres", "read": "Leer la guía"}, "pt": {"badges": ["Grátis para sempre", "Sem anúncios", "Sem cadastro", "Funciona sem internet"], "whyK": "Por que isso importa", "whyT": "Pode acontecer com qualquer pai ou mãe", "why1": "Desde 1998, mais de 1.000 crianças morreram nos EUA após ficarem em carros quentes.", "why2": "Em mais da metade dos casos, um pai ou mãe atencioso simplesmente esqueceu – mudança de rotina, cansaço, uma criança dormindo no banco de trás.", "src": "Fontes: NHTSA, National Safety Council", "final": "Um toque. Tranquilidade em cada viagem.", "gk": "Guia gratuito para pais", "read": "Ler o guia"}, "fr": {"badges": ["Gratuit pour toujours", "Sans pub", "Sans inscription", "Fonctionne hors ligne"], "whyK": "Pourquoi c’est important", "whyT": "Cela peut arriver à tout parent aimant", "why1": "Depuis 1998, plus de 1 000 enfants sont morts aux États-Unis après avoir été laissés dans une voiture surchauffée.", "why2": "Dans plus de la moitié des cas, un parent attentionné a simplement oublié : un changement de routine, la fatigue, un enfant endormi à l’arrière.", "src": "Sources : NHTSA, National Safety Council", "final": "Une touche. La sérénité à chaque trajet.", "gk": "Guide gratuit pour les parents", "read": "Lire le guide"}, "de": {"badges": ["Für immer kostenlos", "Keine Werbung", "Keine Anmeldung", "Funktioniert offline"], "whyK": "Warum das wichtig ist", "whyT": "Es kann allen liebevollen Eltern passieren", "why1": "Seit 1998 sind allein in den USA mehr als 1.000 Kinder in überhitzten Autos gestorben.", "why2": "In mehr als der Hälfte der Fälle hat ein fürsorglicher Elternteil das Kind einfach vergessen – eine geänderte Routine, Müdigkeit, ein schlafendes Kind auf der Rückbank.", "src": "Quellen: NHTSA, National Safety Council", "final": "Ein Tipp. Ruhe bei jeder Fahrt.", "gk": "Kostenloser Ratgeber für Eltern", "read": "Ratgeber lesen"}, "it": {"badges": ["Gratis per sempre", "Senza pubblicità", "Senza registrazione", "Funziona offline"], "whyK": "Perché è importante", "whyT": "Può succedere a qualsiasi genitore", "why1": "Dal 1998, solo negli Stati Uniti, oltre 1.000 bambini sono morti dopo essere rimasti in un’auto rovente.", "why2": "In più della metà dei casi un genitore attento ha semplicemente dimenticato: un cambio di routine, la stanchezza, un bambino addormentato dietro.", "src": "Fonti: NHTSA, National Safety Council", "final": "Un tocco. Serenità in ogni viaggio.", "gk": "Guida gratuita per i genitori", "read": "Leggi la guida"}, "tr": {"badges": ["Sonsuza dek ücretsiz", "Reklamsız", "Kayıt yok", "İnternetsiz çalışır"], "whyK": "Neden önemli", "whyT": "Bu, seven her ebeveynin başına gelebilir", "why1": "1998’den bu yana yalnızca ABD’de 1.000’den fazla çocuk sıcak araçta hayatını kaybetti.", "why2": "Vakaların yarısından fazlasında özenli bir ebeveyn sadece unuttu – değişen rutin, yorgunluk, arkada uyuyan bir çocuk.", "src": "Kaynaklar: NHTSA, National Safety Council", "final": "Tek dokunuş. Her yolculukta huzur.", "gk": "Ebeveynler için ücretsiz rehber", "read": "Rehberi okuyun"}, "hi": {"badges": ["हमेशा मुफ़्त", "कोई विज्ञापन नहीं", "कोई साइन-अप नहीं", "बिना इंटरनेट चलता है"], "whyK": "यह क्यों ज़रूरी है", "whyT": "यह किसी भी प्यार करने वाले माता-पिता के साथ हो सकता है", "why1": "1998 से अब तक सिर्फ़ अमेरिका में 1,000 से ज़्यादा बच्चों की मौत गर्म कार में छूट जाने से हुई है।", "why2": "आधे से ज़्यादा मामलों में एक परवाह करने वाले माता-पिता बस भूल गए – दिनचर्या में बदलाव, थकान, पीछे सोता हुआ बच्चा।", "src": "स्रोत: NHTSA, National Safety Council", "final": "एक टैप। हर सफ़र में सुकून।", "gk": "माता-पिता के लिए मुफ़्त गाइड", "read": "गाइड पढ़ें"}, "zh": {"badges": ["永久免费", "无广告", "无需注册", "无需联网"], "whyK": "为什么重要", "whyT": "任何一位爱孩子的家长都可能遇到", "why1": "自 1998 年以来，仅在美国就有超过 1,000 名儿童因被留在高温车内而死亡。", "why2": "超过一半的案例中，细心的家长只是忘了——日常安排变化、疲劳、孩子在后座睡着了。", "src": "来源：NHTSA、National Safety Council", "final": "一键开启，每次出行都安心。", "gk": "家长免费指南", "read": "阅读指南"}, "zht": {"badges": ["永久免費", "無廣告", "免註冊", "不需網路"], "whyK": "為什麼重要", "whyT": "任何一位愛孩子的家長都可能遇到", "why1": "自 1998 年以來，光是在美國就有超過 1,000 名兒童因被留在高溫車內而死亡。", "why2": "超過一半的案例中，細心的家長只是忘了——日常作息改變、疲勞、孩子在後座睡著了。", "src": "來源：NHTSA、National Safety Council", "final": "一鍵開啟，每次出門都安心。", "gk": "家長免費指南", "read": "閱讀指南"}, "ja": {"badges": ["ずっと無料", "広告なし", "登録不要", "オフラインで動作"], "whyK": "なぜ大切なのか", "whyT": "子どもを愛するどんな親にも起こりうること", "why1": "1998年以降、米国だけでも1,000人以上の子どもが高温の車内に残されて亡くなっています。", "why2": "その半数以上は、子ども思いの親がただ忘れてしまったケースです。いつもと違う予定、疲れ、後部座席で眠る子ども。", "src": "出典：NHTSA、National Safety Council", "final": "ワンタップで、毎日の運転に安心を。", "gk": "保護者向け無料ガイド", "read": "ガイドを読む"}, "ko": {"badges": ["평생 무료", "광고 없음", "가입 불필요", "인터넷 없이 작동"], "whyK": "왜 중요할까요", "whyT": "아이를 사랑하는 어느 부모에게나 일어날 수 있어요", "why1": "1998년 이후 미국에서만 1,000명이 넘는 아이가 뜨거운 차 안에 남겨져 목숨을 잃었습니다.", "why2": "절반 이상은 아이를 아끼는 부모가 그저 깜빡한 경우였어요. 바뀐 일과, 피로, 뒷좌석에서 잠든 아이.", "src": "출처: NHTSA, National Safety Council", "final": "한 번의 탭으로 매번 안심 운전.", "gk": "부모를 위한 무료 가이드", "read": "가이드 읽기"}, "id": {"badges": ["Gratis selamanya", "Tanpa iklan", "Tanpa daftar", "Bisa tanpa internet"], "whyK": "Mengapa ini penting", "whyT": "Bisa terjadi pada orang tua mana pun", "why1": "Sejak 1998, lebih dari 1.000 anak di AS meninggal setelah tertinggal di mobil yang panas.", "why2": "Di lebih dari separuh kasus, orang tua yang penuh perhatian hanya lupa – rutinitas berubah, kelelahan, anak tertidur di kursi belakang.", "src": "Sumber: NHTSA, National Safety Council", "final": "Sekali ketuk. Tenang di setiap perjalanan.", "gk": "Panduan gratis untuk orang tua", "read": "Baca panduan"}, "vi": {"badges": ["Miễn phí mãi mãi", "Không quảng cáo", "Không cần đăng ký", "Chạy không cần mạng"], "whyK": "Vì sao điều này quan trọng", "whyT": "Điều này có thể xảy ra với bất kỳ cha mẹ nào", "why1": "Từ năm 1998, chỉ riêng ở Mỹ đã có hơn 1.000 trẻ em tử vong vì bị bỏ quên trong xe nóng.", "why2": "Hơn một nửa số trường hợp là do cha mẹ chu đáo chỉ đơn giản là quên – thay đổi thói quen, mệt mỏi, trẻ ngủ ở ghế sau.", "src": "Nguồn: NHTSA, National Safety Council", "final": "Một chạm. An tâm trên mọi hành trình.", "gk": "Cẩm nang miễn phí cho cha mẹ", "read": "Đọc cẩm nang"}, "pl": {"badges": ["Zawsze za darmo", "Bez reklam", "Bez rejestracji", "Działa offline"], "whyK": "Dlaczego to ważne", "whyT": "To może się przydarzyć każdemu kochającemu rodzicowi", "why1": "Od 1998 roku w samych Stanach Zjednoczonych ponad 1000 dzieci zmarło pozostawionych w nagrzanym aucie.", "why2": "W ponad połowie przypadków troskliwy rodzic po prostu zapomniał – zmiana rutyny, zmęczenie, dziecko śpiące z tyłu.", "src": "Źródła: NHTSA, National Safety Council", "final": "Jedno dotknięcie. Spokój w każdej podróży.", "gk": "Darmowy poradnik dla rodziców", "read": "Przeczytaj poradnik"}, "nl": {"badges": ["Altijd gratis", "Geen advertenties", "Geen account", "Werkt offline"], "whyK": "Waarom dit belangrijk is", "whyT": "Het kan elke liefdevolle ouder overkomen", "why1": "Sinds 1998 zijn alleen al in de VS meer dan 1.000 kinderen overleden nadat ze in een hete auto waren achtergelaten.", "why2": "In meer dan de helft van de gevallen vergat een zorgzame ouder het kind gewoon – een andere routine, vermoeidheid, een kind dat achterin slaapt.", "src": "Bronnen: NHTSA, National Safety Council", "final": "Eén tik. Gerust op elke rit.", "gk": "Gratis gids voor ouders", "read": "Lees de gids"}};
 const SCAN={"en": "Scan with your phone", "he": "סרקו עם הטלפון", "ar": "امسح الرمز بهاتفك", "ru": "Отсканируйте телефоном", "uk": "Відскануйте телефоном", "es": "Escanéalo con tu teléfono", "pt": "Escaneie com o celular", "fr": "Scannez avec votre téléphone", "de": "Mit dem Handy scannen", "it": "Inquadra con il telefono", "tr": "Telefonunuzla tarayın", "hi": "अपने फ़ोन से स्कैन करें", "zh": "用手机扫码", "zht": "用手機掃描", "ja": "スマホでスキャン", "ko": "휴대폰으로 스캔하세요", "id": "Pindai dengan ponsel", "vi": "Quét bằng điện thoại", "pl": "Zeskanuj telefonem", "nl": "Scan met je telefoon"};
 const GUIDE={"en": "7 habits to never forget a child in the car", "es": "7 hábitos para no olvidar a un niño en el coche", "pt": "7 hábitos para nunca esquecer uma criança no carro", "fr": "7 habitudes pour ne jamais oublier un enfant en voiture", "de": "7 Gewohnheiten gegen das Vergessen im Auto", "it": "7 abitudini per non dimenticare un bambino in auto", "he": "7 הרגלים כדי לא לשכוח ילד ברכב", "ar": "7 عادات حتى لا تنسى طفلاً في السيارة"};
 const NAMES={en:"English",he:"עברית",ar:"العربية",ru:"Русский",uk:"Українська",es:"Español",pt:"Português",fr:"Français",de:"Deutsch",it:"Italiano",tr:"Türkçe",hi:"हिन्दी",zh:"简体中文",zht:"繁體中文",ja:"日本語",ko:"한국어",id:"Bahasa Indonesia",vi:"Tiếng Việt",pl:"Polski",nl:"Nederlands"};
 const HL={zht:"zh-TW",zh:"zh-CN",he:"iw"};
 const STORE="https://play.google.com/store/apps/details?id=com.gilalon.babysafe";
+const ICONS=['<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></svg>','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg>','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>'];
+const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function pick(){
   const q=new URLSearchParams(location.search).get("lang");
   if(q&&T[q])return q;
@@ -135,23 +307,34 @@ function pick(){
 const sel=document.getElementById("lang");
 for(const k in NAMES){const o=document.createElement("option");o.value=k;o.textContent=NAMES[k];sel.appendChild(o);}
 function apply(l){
-  const t=T[l];
+  const t=T[l],x=X[l];
   document.documentElement.lang=l==="zht"?"zh-Hant":l;
   document.documentElement.dir=t.dir;
   document.querySelectorAll("[data-t]").forEach(e=>{const v=t[e.dataset.t];if(e.dataset.t==="h1")e.innerHTML=v;else e.textContent=v;});
+  document.querySelectorAll("[data-x]").forEach(e=>{const k=e.dataset.x;e.textContent=k==="b0"?x.badges[0]:x[k];});
   document.querySelectorAll("[data-play]").forEach(a=>a.href=STORE+"&hl="+(HL[l]||l));
   document.title="BabySafe – "+t.h1.replace(/<br>/g," ");
-  document.getElementById("heroimg").src="img/"+l+"/3.webp";
-  document.getElementById("steps").innerHTML=t.steps.map(s=>`<div class="step"><b></b><span></span></div>`).join("");
-  document.querySelectorAll(".step").forEach((e,i)=>{e.querySelector("b").textContent=t.steps[i][0];e.querySelector("span").textContent=t.steps[i][1];});
-  document.getElementById("gallery").innerHTML=[1,2,3,4].map(n=>`<img loading="lazy" src="img/${l}/${n}.webp" width="240" height="427" alt="">`).join("");
+  document.getElementById("heroimg").src="img/"+l+"/phone.webp";
+  document.getElementById("fl1").textContent=t.steps[1][1];
+  document.getElementById("fl2").textContent=t.steps[2][0];
+  document.getElementById("chips").innerHTML=x.badges.slice(1).map(s=>"<li>"+CHECK+esc(s)+"</li>").join("");
+  document.getElementById("steps").innerHTML=t.steps.map((s,i)=>`<div class="step rv in"><span class="n">0${i+1}</span><div class="ic">${ICONS[i]}</div><b>${esc(s[0])}</b><span>${esc(s[1])}</span></div>`).join("");
+  document.getElementById("gallery").innerHTML=[1,2,3,4].map(n=>`<img loading="lazy" src="img/${l}/${n}.webp" width="480" height="853" alt="">`).join("");
   document.getElementById("scan").textContent=SCAN[l];
-  document.getElementById("vid").src="video/BabySafe_anim_"+l+".mp4#t=4";
-  {const g=GUIDE[l]?l:"en";const a=document.getElementById("guide");a.href="guides/"+g+".html";a.textContent=GUIDE[g];}
+  const v=document.getElementById("vid");v.src="video/BabySafe_anim_"+l+".mp4#t=4";
+  const g=GUIDE[l]?l:"en";
+  document.querySelectorAll(".guide-link").forEach(a=>a.href="guides/"+g+".html");
+  document.getElementById("guide").textContent=GUIDE[g];
+  document.getElementById("gtitle").textContent=GUIDE[g];
+  document.getElementById("fbrest").textContent=x.badges[1]+" · "+x.badges[2];
   sel.value=l;
 }
 sel.onchange=()=>{apply(sel.value);const u=new URL(location);u.searchParams.set("lang",sel.value);history.replaceState(null,"",u);};
 apply(pick());
+const hdr=document.getElementById("top");
+addEventListener("scroll",()=>hdr.classList.toggle("scrolled",scrollY>8),{passive:true});
+const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px"}):null;
+document.querySelectorAll(".rv").forEach(e=>io?io.observe(e):e.classList.add("in"));
 </script>
 </body>
 </html>
