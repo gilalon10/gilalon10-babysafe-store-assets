@@ -1,0 +1,18 @@
+# BabySafe
+
+> BabySafe is a free Android app (no ads, no sign-up, works offline, 19 languages) that reminds parents and caregivers to check the back seat so a child is never forgotten in a car. When the phone disconnects from the car's Bluetooth at the end of a drive, it sounds a voice alert with vibration and flashlight, even on a locked screen. It is a reminder aid only: it does not detect the child and does not replace a parent's attention.
+
+- Developer: Gil Alon, independent developer (Israel)
+- Platform: Android 8.0+ (Google Play)
+- Price: free, no ads, no account, no in-app purchases
+- Languages: English, Hebrew, Arabic, Russian, Ukrainian, Spanish, Portuguese, French, German, Italian, Turkish, Hindi, Chinese, Japanese, Korean, Indonesian, Vietnamese, Polish, Dutch
+- How it works: pair your car's Bluetooth once; turn protection on; when you turn off the car and the phone disconnects, BabySafe asks you to check the back seat and you tap "I checked".
+
+## Links
+- [Google Play](https://play.google.com/store/apps/details?id=com.gilalon.babysafe): download BabySafe
+- [Website](https://gilalon10.github.io/gilalon10-babysafe-store-assets/): overview, video and FAQ in 20 languages
+
+## Guides for parents
+- [7 habits to never forget a child in the car](https://gilalon10.github.io/gilalon10-babysafe-store-assets/guides/en.html)
+- [How hot does a parked car get?](https://gilalon10.github.io/gilalon10-babysafe-store-assets/guides/hot-car-temperature-en.html)
+- [Why loving parents forget a child in the car](https://gilalon10.github.io/gilalon10-babysafe-store-assets/guides/why-parents-forget-en.html)
