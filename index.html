@@ -167,6 +167,7 @@ details p{margin:0;padding:0 24px 22px;color:var(--muted);font-size:16px}
 .guide b{display:block;font-size:20px;line-height:1.3;margin:2px 0}
 .guide .go{margin-inline-start:auto;font-weight:700;font-size:15px;white-space:nowrap;color:var(--muted)}
 html[dir=rtl] .guide .go .ar{display:inline-block;transform:scaleX(-1)}
+.po .po-ic{background:rgba(62,111,184,.12);color:var(--blue)}.po small{color:var(--blue)}.po-s{display:block;color:var(--muted);font-size:15px}
 .final{padding:0 0 96px}
 .final .box{background:linear-gradient(135deg,#1A9E50,#22B35E 45%,#2E7DBF);color:#fff;border-radius:32px;padding:64px 40px;text-align:center;position:relative;overflow:hidden}
 .final .box:before{content:"";position:absolute;inset:0;background:radial-gradient(400px 260px at 15% 0%,rgba(255,255,255,.25),transparent 70%)}
@@ -272,6 +273,14 @@ footer .sp{margin-inline-start:auto}
     <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></span>
     <span><small data-x="gk"></small><b id="gtitle"></b></span>
     <span class="go"><span data-x="read"></span> <span class="ar">→</span></span>
+  </a>
+</div></section>
+
+<section id="parkoff" style="padding-top:0" hidden><div class="wrap">
+  <a class="guide po" id="po-link" href="https://parkoff-app.netlify.app/?utm_source=babysafe&utm_medium=site_card" target="_blank" rel="noopener">
+    <span class="ic po-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg></span>
+    <span><small id="po-k"></small><b id="po-t"></b><span class="po-s" id="po-s"></span></span>
+    <span class="go"><span id="po-go"></span> <span class="ar">→</span></span>
   </a>
 </div></section>
 
@@ -396,6 +405,12 @@ function pick(){
 }
 const sel=document.getElementById("lang");
 for(const k in NAMES){const o=document.createElement("option");o.value=k;o.textContent=NAMES[k];sel.appendChild(o);}
+const PO={he:["מאותו מפתח","ParkOff – תזכורת לסיים חניה","תזכורת אוטומטית לסיים את החניה כשיוצאים מהרכב, וגם תזכורת לבדוק את המושב האחורי. חינם.","לאתר ParkOff",""],
+ru:["От того же разработчика","ParkOff – напоминание о парковке","Автоматически напоминает остановить оплату парковки, когда вы выходите из машины, и проверить заднее сиденье. Бесплатно.","Сайт ParkOff","ru/"],
+ar:["من نفس المطوّر","ParkOff – تذكير بإيقاف الموقف","يذكّرك تلقائياً بإيقاف دفع الموقف عند الخروج من السيارة، وبتفقّد المقعد الخلفي. مجاني.","موقع ParkOff","ar/"]};
+function applyPO(l){const sec=document.getElementById("parkoff");const p=PO[l];if(!p){sec.hidden=true;return}sec.hidden=false;
+["po-k","po-t","po-s","po-go"].forEach((id,i)=>document.getElementById(id).textContent=p[i]);
+document.getElementById("po-link").href="https://parkoff-app.netlify.app/"+p[4]+"?utm_source=babysafe&utm_medium=site_card";}
 function apply(l){
   const t=T[l],x=X[l];
   document.documentElement.lang=l==="zht"?"zh-Hant":l;
@@ -417,6 +432,7 @@ function apply(l){
   document.getElementById("guide").textContent=GUIDE[g];
   document.getElementById("gtitle").textContent=GUIDE[g];
   document.getElementById("fbrest").textContent=x.badges[1]+" · "+x.badges[2];
+  applyPO(l);
   sel.value=l;
 }
 sel.onchange=()=>{apply(sel.value);const u=new URL(location);u.searchParams.set("lang",sel.value);history.replaceState(null,"",u);};

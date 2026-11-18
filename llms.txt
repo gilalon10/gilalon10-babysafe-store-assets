@@ -8,6 +8,21 @@
 - Languages: English, Hebrew, Arabic, Russian, Ukrainian, Spanish, Portuguese, French, German, Italian, Turkish, Hindi, Chinese, Japanese, Korean, Indonesian, Vietnamese, Polish, Dutch
 - How it works: pair your car's Bluetooth once; turn protection on; when you turn off the car and the phone disconnects, BabySafe asks you to check the back seat and you tap "I checked".
 
+## Who it is for
+- Parents of babies and young children
+- Grandparents who drive grandchildren to kindergarten or daycare
+- Babysitters, nannies and other caregivers
+- Anyone who wants a simple extra layer of protection when routines change
+
+## Privacy
+- No location tracking, no account, no ads, no in-app purchases; works offline. The app only listens for the car's Bluetooth connection.
+
+## בעברית
+BabySafe היא אפליקציה חינמית ופשוטה לאנדרואיד שמזכירה לבדוק את המושב האחורי בכל יציאה מהרכב, כדי לא לשכוח ילד ברכב. כשהטלפון מתנתק מהבלוטוס של הרכב מופיעה התראה במסך מלא עם קול, רטט ופנס, גם כשהטלפון נעול. בוחרים את הבלוטוס של הרכב פעם אחת וזהו. מתאימה להורים, לסבא וסבתא, לבייביסיטר ולמטפלת. חינם, בלי פרסומות, בלי הרשמה ובלי מעקב מיקום. האפליקציה היא תזכורת עזר בלבד: היא לא מזהה את הילד ולא מחליפה את תשומת הלב של ההורה.
+
+## Sister app
+- [ParkOff](https://parkoff-app.netlify.app/): free Israeli app by the same developer that reminds drivers to stop paid street parking when they leave the car, and also to check the back seat. [Google Play](https://play.google.com/store/apps/details?id=com.parkoff.app)
+
 ## Links
 - [Google Play](https://play.google.com/store/apps/details?id=com.gilalon.babysafe): download BabySafe
 - [Website](https://gilalon10.github.io/gilalon10-babysafe-store-assets/): overview, video and FAQ in 20 languages
